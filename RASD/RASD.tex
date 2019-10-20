@@ -1,0 +1,138 @@
+\documentclass{report}
+\usepackage{xcolor,comment, subfiles, graphicx, caption, longtable, subfig, fancyhdr}
+\usepackage{float} %Used to force image to appear in the section in which it's declared
+\usepackage[hidelinks]{hyperref}
+% SECTION COMMANDS: here we include the commands for formatting and other purposes
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+%\renewcommand{\headrulewidth}{0pt} % erases the rule under the header
+%\renewcommand{\footrulewidth}{0.3pt} % erases the rule under the header
+
+
+\newcommand{\sups}[1]{\ensuremath{^{\textrm{#1}}}}
+
+\newcommand{\subs}[1]{\ensuremath{_{\textrm{#1}}}}
+
+\newcommand{\ic}[1]{\textit{#1}}
+
+\newcommand{\image}[4]{
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth, height = {#1}, keepaspectratio]{#2}
+	\caption*{#3}
+	\label{#4}
+
+	\label{fig:nonfloat} %Used to force image to appear in the section in which it's declared
+	\end{figure}
+}
+
+%Alligns two images in a row 
+\newcommand{\twoimages}[5]{
+	\captionsetup[subfigure]{labelformat = empty}
+	\begin{figure}[H]
+		\begin{center}
+	        	\subfloat[#3]{
+			\includegraphics[height=#1, keepaspectratio]{#2}
+	        	}
+        		\hspace{25mm}
+	        	\subfloat[#5]{
+			\includegraphics[height=#1, keepaspectratio]{#4}
+		}
+		\end{center}
+	\end{figure}
+}
+
+\providecommand{\rasd}{.} % relative path to rasd.tex
+
+\graphicspath{{Images/}}
+
+
+
+%\title{
+%\small Politecnico di Milano\\
+%\small AA 2019-2020\\
+%\large Computer Science and Engineering\\
+%\Large Software Engineering 2 Project\\
+%\huge Requirement Analysis and Specification Document
+%}
+
+
+%\date{2019-10-20}
+%\author{
+%\large Ferrara Fabiana, Formicola Stefano, Guerra Leonardo}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\color{gray}{\normalsize{ - RASD - 1.1}}}
+\lfoot{\textcolor{gray}{\small{Copyright © 2019, Ferrara Fabiana, \newline Formicola Stefano, Guerra Leonardo – All rights reserved}}}
+\rfoot{\textcolor{gray}{\newline \thepage}}
+\addtocontents{toc}{\protect\thispagestyle{fancy}}
+
+
+\begin{document}
+	\pagenumbering{gobble}
+	\begin{titlepage}
+		\centering	
+		\vfill
+		{
+			\includegraphics[width =\linewidth, height = 4cm, keepaspectratio]{PolitecnicoLogo.png}
+			\label{fig:PolitecnicoLogo}
+			\large \\[2ex]M.Sc. Computer Science and Engineering\\
+			\large Software Engineering 2 Project\\[9ex]			
+			%\image{5cm}{TrackMeLogo.png}{}{TrackMeLogo}
+			\huge Requirements Analysis and Specification Document\\[4ex]
+
+			\normalsize Ferrara Fabiana, Formicola Stefano, Guerra Leonardo\\[1.5ex]
+			\normalsize 20 October 2019 \\[1.5ex]
+			\normalsize GitHub Repository: https://github.com/ste7en/FerraraFormicolaGuerra\\[3ex]
+			\normalsize Version 0.1
+
+
+		}
+		
+	\end{titlepage}
+	%\maketitle
+
+	
+	\newpage
+	\pagenumbering{arabic}
+	\tableofcontents
+	\thispagestyle{fancy}
+%	\let\tableofcontents\relax
+	
+	\newpage
+	
+	\subfile{1.Introduction/Introduction.tex}
+	\subfile{2.OverallDescription/OverallDescription.tex}
+	\subfile{3.SpecificRequirements/SpecificRequirements.tex}
+	\subfile{4.FormalAnalysisUsingAlloy/FormalAnalysisUsingAlloy.tex}
+		
+	\chapter{Effort Spent}
+	\thispagestyle{fancy}
+		\paragraph{Ferrara Fabiana} Total hours of work: 
+			\begin{itemize}
+				\item 2h Reading of Project Delivery Document, General LaTex setting.
+				\item 3h RASD Review homework
+
+			\end{itemize}
+		\paragraph{Formicola Stefano} Total hours of work: 
+			\begin{itemize}
+				\item 2h Reading of Project Delivery Document, General LaTex setting.
+				\item 3h RASD Review homework
+
+			\end{itemize}
+		\paragraph{Guerra Leonardo} Total hours of work: 
+			\begin{itemize}
+				\item 2h Reading of Project Delivery Document, General LaTex setting.
+				\item 3h RASD Review homework
+				
+			\end{itemize}
+	\chapter{References}
+	\thispagestyle{fancy}
+	\begin{itemize}
+				\item[1]E. Di Nitto. \ic{Lecture Slides}. Politecnico di Milano.
+				\item[2]E. Di Nitto. \ic{Mandatory Project Assignment AY 2018-2019}. Politecnico di Milano.
+				\item[3]ISO/IEC/IEEE 29148:2011. \ic{Standard on requirement engineering}.\\https://standards.ieee.org/standard/29148-2011.html.
+	\end{itemize}
+	
+\end{document}
