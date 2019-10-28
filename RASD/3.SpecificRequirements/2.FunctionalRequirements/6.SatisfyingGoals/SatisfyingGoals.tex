@@ -13,7 +13,7 @@
 		\item[R\subs{6}]Receive \ic{User position};
 		\item[R\subs{7}]Send \ic{User picture} to the \ic{License plate recognition service};
 		\item[R\subs{8}]Receive \ic{Ricognized license plate} from the \ic{License plate recognition service};
-		\item[R\subs{9}]Create \ic{User report} (? attaching Timestamp and User identifier to User picture, Recognized license plate and type of Traffic violation);
+		\item[R\subs{9}]Create \ic{User report};
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
 		\\
 		\item[D\subs{1}]Data inserted by the \ic{User} at sign up corresponds to their real data;
@@ -21,18 +21,19 @@
 		\item[D\subs{3}]The maps in use accurately represent the world;
 		\item[D\subs{4}]\ic{Users} own a working smartphone which has access to Internet connection;
 		\item[D\subs{5}]\ic{Users} own a working smartphone which has a working GPS antenna;
-		\item[D\subs{6}]SafeStreets (?and License plate recognition service are) is always online;
-		\item[D\subs{7}]\ic{License plate recognition service} always provides a correct evaluation (traduction?) of the \ic{User picture}, generating a text representing the \ic{Recognized license plate};
+		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} is always online;
+		\item[D\subs{7}]\ic{License plate recognition service} always provides a text representing a correct recognition of the license plate in the \ic{User picture};
+		\item[D\subs{9}]\ic{User pictures} correspond to real violation;
 	\end{itemize}
 
 	\item[G\subs{2}]Send \ic{User report} to \ic{Municipality} as soon as it is generated;
 	\begin{itemize}
 		\item[R\subs{11}]Send \ic{User report} to \ic{Municipality};
-		\item[R\subs{15}]Not send \ic{User report} to \ic{Municipality} if \ic{Chain of custody} is broken;
+		\item[R\subs{15}]Guarantees that the data which constitutes the \ic{User report} are not corrupted;
 		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
 		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
 		\\
-		\item[D\subs{6}]SafeStreets (?and License plate recognition service are) is always online;	
+		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} are is always online;	
 	\end{itemize}
 
 	\item[G\subs{3}]Send \ic{User picture} to the \ic{Licence plate recognition service} as soon as it is received;
@@ -40,14 +41,13 @@
 		\item[R\subs{4}]Receive \ic{User picture};
 		\item[R\subs{7}]Send \ic{User picture} to the \ic{License plate recognition service};
 		\\
-		\item[D\subs{6}]SafeStreets (?and License plate recognition service are) is always online;
+		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} are always online;
 	\end{itemize}
 
 	\item[G\subs{4}]Allow \ic{Municipality} to visualize \ic{Detailed statistics};
 	\begin{itemize}
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
 		\item[R\subs{13}]Query SafeStreets Database for a \ic{User} by his/her \ic{User identifier};
-		\item[R\subs{14}]Retrieve specific \ic{User reports} by querying SafeStreets Database;
 		\item[R\subs{16}]Receive \ic{Municipality} data access request;
 		\item[R\subs{17}]Validate \ic{Municipality} data access request.
 		\item[R\subs{18}]Allow \ic{Municipality} to set specific constraints to define \ic{Detailed statistics};
@@ -60,11 +60,7 @@
 	\begin{itemize}
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
 		\item[R\subs{13}]Query SafeStreets Database for a \ic{User} by his/her \ic{User identifier};
-		\item[R\subs{14}]Retrieve specific \ic{User reports} by querying SafeStreets Database;
-		\item[R\subs{20}]Receive \ic{User report} access request from \ic{User};
-		\item[R\subs{21}]Validate \ic{User report} access request from \ic{User};
-		\item[R\subs{22}]Allow \ic{User} to set specific constraints to define a group of \ic{User reports};
-		\item[R\subs{23}]Properly anonimyze the group of \ic{User reports} defined by the \ic{User}, in order to generate \ic{Public statistics};
+		\item[R\subs{23}]Allow \ic{User} to choose among filters which define \ic{Public statistics};
 		\item[R\subs{24}]Send \ic{Public statistics} to the requesting \ic{User};
 	\end{itemize}
 
@@ -72,7 +68,6 @@
 	\begin{itemize}
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
 		\item[R\subs{13}]Query SafeStreets Database for a \ic{User} by his/her \ic{User identifier};
-		\item[R\subs{14}]Retrieve specific \ic{User reports} by querying SafeStreets Database;
 		\item[R\subs{25}]Send \ic{Accidents} Database access request to \ic{Municipality}; 
 		\item[R\subs{26}]Receive \ic{Accidents} Database access confirmation from \ic{Municipality};
 		\item[R\subs{27}]Request \ic{Accidents} data to \ic{Municipality};
@@ -85,26 +80,29 @@
 		\item[D\subs{8}]\ic{Municipality} grants access to its own \ic{Accidents} Database;
 	\end{itemize}
 
-	\item[G\subs{7}]Allow a \ic{Third party} (?) to visualize statistics about \ic{Traffic tickets} generated from \ic{User reports};
+	\item[G\subs{7}]Collect information about \ic{Ticket feedback};
 	\begin{itemize}
-		\item ???
+	
+		\item[R\subs{12}]Store \ic{Ticket feedback} in SafeStreets Database;
 		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
 		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
 		\item[R\subs{33}]Receive \ic{Ticket feedback} from \ic{Municipality};
-		\item[R\subs{34}]Store \ic{Ticket feedback} in SafeStreets Database;
-		\item ???
+	
+
 	\end{itemize}
 
-	\item[G\subs{8}]Allow \ic{Users} to visualize their contribution (=manage their profile?) to SafeStreets;
+	\item[G\subs{8}]Allow \ic{Users} to visualize their contribution to SafeStreets;
 	\begin{itemize}
 		\item[R\subs{1}]At sign up, \ic{User} must provide: First name, last name, email and password;
 		\item[R\subs{2}]At sign up, \ic{User} must accept \ic{Terms and conditions}, including the \ic{Privacy statement};
 		\item[R\subs{3}]Identify a \ic{User} by his/her \ic{User identifier};
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
-		\item[R\subs{12a}]Allow \ic{Users} to request all their \ic{User report} and the related \ic{Ticket feedback} stored in SafeStreets Database at any time;
-		\item[R\subs{12b}]Send to a specific \ic{User} his/her \ic{User report} stored;
-		\item[R\subs{13}]Query SafeStreets Database for a \ic{User} by his/her \ic{User identifier};
-		\item[R\subs{14}]Retrieve specific \ic{User reports} by querying SafeStreets Database;
+		\item[R\subs{12}]Store \ic{Ticket feedback} in SafeStreets Database;
+		\item[R\subs{20}]Allow \ic{Users} to request all their \ic{User report} and the related \ic{Ticket feedback} stored in SafeStreets Database at any time;
+		\item[R\subs{21}]Send to a specific \ic{User} his/her \ic{User report} stored;
+		\item[R\subs{22}]Send to a specific \ic{User} the \ic{Ticket feedback} related to his/her \ic{User report};
+		\item[R\subs{33}]Receive \ic{Ticket feedback} from \ic{Municipality};
+		
 	\end{itemize}
 
 \end{itemize}
