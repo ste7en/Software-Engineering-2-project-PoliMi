@@ -6,15 +6,17 @@
 This document constitutes the Requirement Analysis and Specification Document (i.e. RASD). Its purpose is to analyze the requirements that will lay the foundations of application services, to specify the application domain, the entities involved and their relationship, to clearly explain the objectives, the constraints and the features that are going to be implemented. \newline
 SafeStreets is a crowd-sourced application that intends to provide users with the possibility to notify authorities when traffic violations occur, and in particular parking violations. The application allows users to send pictures of violations, including their date, time, and position, to authorities.
 			
-			\subsection{Goals\label{sect:1.1.1}}
-			\begin{itemize}
-				\item[G\subs{1}]Collect \ic{User report} in SafeStreets Database;
+\subsection{Goals\label{sect:1.1.1}}
+
+\begin{itemize}
+		\item[G\subs{1}]Collect \ic{User report} in SafeStreets Database;
 		\item[G\subs{2}]Send \ic{User report} to \ic{Municipality} as soon as it is generated;
-		\item[G\subs{3}]Send \ic{User picture} to the \ic{Licence plate recognition service} as soon as it is generated;
+		\item[G\subs{3}]Send \ic{User picture} to the \ic{Licence plate recognition service} as soon as it is received;
 		\item[G\subs{4}]Allow \ic{Municipality} to visualize \ic{Detailed statistics};
 		\item[G\subs{5}]Allow \ic{Users} to visualize \ic{Public statistics};
 		\item[G\subs{6}]Suggest \ic{Possible interventions} to \ic{Municipality};
-		\item[G\subs{7}]Allow a \ic{Third party} (?) to visualize statistics about \ic{Traffic tickets} generated from \ic{User reports};
-		\item[G\subs{8}]Allow \ic{Users} to visualize their contribution (=manage their profile?) to SafeStreets;
-			\end{itemize}
+		\item[G\subs{7}]Collect information about \ic{Ticket feedback};
+		\item[G\subs{8}]Allow \ic{Users} to visualize their contribution to SafeStreets.
+\end{itemize}
+
 \end{document}
