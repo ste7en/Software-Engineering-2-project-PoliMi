@@ -3,9 +3,285 @@
 
 \subsection{Use Case Analysis\label{sect:3.2.3}}
 
+% U1:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{User Sign Up}\\ \hline
+		Actors & \ic{User}, SafeStreets\\ \hline
+		Entry Conditions & \ic{User} successfully installed SafeStreets application on the smartphone\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{User} taps on "Sign Up" button
+			\item \ic{User} fills the "email" and "password" fields
+			\item \ic{User} checks the "Accept terms and conditions" checkbox
+			\item \ic{User} taps on "Confirm" button
+			\item SafeStreets saves \ic{User} information
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{User} successfully registered on SafeStreets\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item Inserted email already registered for another \ic{User}
+			\item Inserted password is not valid
+			\item Not all required fields are filled in
+			\item "Accept terms and conditions" checkbox is not checked
+			\item \ic{User} is already signed up
+		\end{enumerate}
+		\ic{User} is invited to try again signing up, reporting which error they have committed. \\ 
+		\hline
+		\caption*{U\subs{1}}
+	\end{longtable}
+\end{center}
 
+%--- --- --- --- ---
 
+\newpage
+% U2:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{User Login}\\ \hline
+		Actors & \ic{User}, SafeStreets\\ \hline
+		Entry Conditions & \ic{User} successfully installed SafeStreets application on the smartphone and registered on SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{User} enters "email"
+			\item \ic{User} enters "password"
+			\item \ic{User} presses the "Confirm" button
+			\item SafeStreets checks \ic{User} credentials
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{User} is successfully logged in\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item Inserted "email" is not valid
+			\item Inserted "password" is not valid
+		\end{enumerate}
+		\ic{User} is asked to try again to log into the system. \\ 
+		\hline
+		\caption*{U\subs{2}}
+	\end{longtable}
+\end{center}
 
+%--- --- --- --- ---
 
+% U3:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{Municipality} Login}\\ \hline
+		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		Entry Conditions & \ic{Municipality} is connected to the \ic{Municipality} dedicated web
+		site\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{Municipality} enters "\ic{Reference code}"
+			\item \ic{Municipality} enters "password"
+			\item \ic{Municipality} presses the "Confirm" button
+			\item SafeStreets checks \ic{Municipality} institutional credentials
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{Municipality} is successfully logged into the system\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item Inserted "\ic{Reference code}" is not valid
+			\item Inserted "password" is not valid
+		\end{enumerate}
+		\ic{Municipality} is asked to try again to log into the system. \\ 
+		\hline
+		\caption*{U\subs{3}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U4:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{SafeStreets sends \ic{User report} to \ic{Municipality}}\\ \hline
+		Actors & \ic{User}, SafeStreets, \ic{License plate recognition service}, \ic{Municipality}\\ \hline
+		Entry Conditions & \ic{User} successfully logged into SafeStreets and installed SafeStreets application on the smartphone\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{User} takes a picture of the \ic{Traffic violation}
+			\item \ic{User} presses the “Confirm” button
+			\item SafeStreets receive \ic{User picture} and forward it to the \ic{License plate recognition service}
+			\item \ic{License plate recognition service} sends back to SafeStreets a text representing the \ic{Recognized license plate}
+			\item \ic{User} selects a \ic{Type of violation} and presses the “Send” button
+			\item SafeStreets stores the newly generated \ic{User report} in its own Database
+			\item SafeStreets sends \ic{Municipality} the newly generated \ic{User report}
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & SafeStreets correctly collected \ic{User report}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO ???(Corrupted data: Discard report)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{4}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U5:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{Municipality} answers to a \ic{User report}}\\ \hline
+		Actors & SafeStreets, \ic{Municipality}\\ \hline
+		Entry Conditions & \ic{Municipality} successfully logged into SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{Municipality} presses “Reports” button
+			\item \ic{Municipality} select a \ic{User report} to answer
+			\item \ic{Municipality} taps “Confirm” or “Discard” button (in the second case selects a reason as well) to generate the \ic{Ticket feedback}
+			\item SafeStreets receives the \ic{Ticket feedback}
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{Municipality} correctly answered to the \ic{User report}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO ???(Corrupted data: Discard report)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{5}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U6:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{User} visualizes \ic{Public statistics}}\\ \hline
+		Actors & \ic{User}, SafeStreets\\ \hline
+		Entry Conditions & \ic{User} successfully logged into SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{User} presses “Public statistics” button
+			\item \ic{User} select a “period of time”, a “\ic{Type of violation}” and a “specific zone”
+			\item SafeStreets show the \ic{User} the required statistics
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{User} correctly visualizes the required \ic{Public statistics}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO ???(Nothing to show: ?)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{6}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U7:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{Municipality} visualizes \ic{Detailed statistics}}\\ \hline
+		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		Entry Conditions & \ic{Municipality} successfully logged into SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{Municipality} presses the “Stats” button
+			\item \ic{Municipality} select the parameters
+			\item SafeStreets shows \ic{Municipality} the required statistics
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{Municipality} correctly visualizes the required \ic{Detailed statistics}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO ???(Nothing to show: ?)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{7}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U8:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{SafeStreets} suggests \ic{Possible interventions} to \ic{Municipality}}\\ \hline
+		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		Entry Conditions & \ic{Municipality} grants SafeStreets access to its own \ic{Accidents} Database\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item A certain number of \ic{User report} for a particular zone of the city is reached
+			\item SafeStreets identifies the precise area in which a \ic{Possible intervention} could be carried out
+			\item SafeStreets send to \ic{Municipality} the \ic{Possible intervention} 
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{Municipality} correctly receives the suggested \ic{Possible intervention}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO (?)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{8}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
+\newpage
+% U9:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{\ic{User} visualizes his/her contribution to SafeStreets}\\ \hline
+		Actors & \ic{User}, SafeStreets\\ \hline
+		Entry Conditions & \ic{User} successfully logged into SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{User} taps “My reports” button
+			\item \ic{User} chooses one of his/her previous \ic{User report} to check
+			\item \ic{User} visualizes all the details about that particular \ic{User report}		
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{User} correctly visualizes the details about the chosen \ic{User report}\\ \hline
+		Exceptions & 
+		\begin{enumerate}
+			\item %TODO ???(Nothing to show: ?)
+		\end{enumerate}
+		%TODO
+		. \\ 
+		\hline
+		\caption*{U\subs{9}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
 
 \end{document}
