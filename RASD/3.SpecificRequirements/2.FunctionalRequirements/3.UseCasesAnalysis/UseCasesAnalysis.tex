@@ -164,7 +164,6 @@
 
 %--- --- --- --- ---
 
-\newpage
 % U6:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
@@ -181,12 +180,11 @@
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{User} correctly visualizes the required \ic{Public statistics}\\ \hline
-		Exceptions & 
+		Exceptions &
 		\begin{enumerate}
-			\item %TODO ???(Nothing to show: ?)
+			\item No value was chosen for the parameters to be set;
 		\end{enumerate}
-		%TODO
-		. \\ 
+		\ic{User} is asked to select at least one value for the parameters to be set.\\ 
 		\hline
 		\caption*{U\subs{6}}
 	\end{longtable}
@@ -213,10 +211,9 @@
 		Exit Condition & \ic{Municipality} correctly visualizes the required \ic{Detailed statistics}\\ \hline
 		Exceptions & 
 		\begin{enumerate}
-			\item %TODO ???(Nothing to show: ?)
+			\item No value was chosen for the parameters to be set;
 		\end{enumerate}
-		%TODO
-		. \\ 
+		\ic{Municipality} is asked to select at least one value for the parameters to be set.\\ 
 		\hline
 		\caption*{U\subs{7}}
 	\end{longtable}
@@ -241,20 +238,14 @@
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{Municipality} correctly receives the suggested \ic{Possible intervention}\\ \hline
-		Exceptions & 
-		\begin{enumerate}
-			\item %TODO (?)
-		\end{enumerate}
-		%TODO
-		. \\ 
-		\hline
+		Exceptions & No Exceptions.
+		\\ \hline
 		\caption*{U\subs{8}}
 	\end{longtable}
 \end{center}
 
 %--- --- --- --- ---
 
-\newpage
 % U9:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
@@ -273,11 +264,10 @@
 		Exit Condition & \ic{User} correctly visualizes the details about the chosen \ic{User report}\\ \hline
 		Exceptions & 
 		\begin{enumerate}
-			\item %TODO ???(Nothing to show: ?)
+			\item \ic{User} has not yet reported any \ic{Traffic violation};
 		\end{enumerate}
-		%TODO
-		. \\ 
-		\hline
+		A warning is shown and \ic{User} is sent back to the main page.
+		\\ \hline
 		\caption*{U\subs{9}}
 	\end{longtable}
 \end{center}
