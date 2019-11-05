@@ -1,1 +1,142 @@
-<mxfile host="www.draw.io" modified="2019-11-03T18:37:42.861Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.2 Safari/605.1.15" version="12.1.9" etag="N-XI9JUiWru-fuO2zkdM" type="github"><diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">7Vtdk6I4FP01Pk4XBMLH47TbPfsyVVPVVbszjxGCUhOIhXHU/fUbJAgkgDQNSqu+NLkJIeScc3NJbs+MebT/lqD16jv1MZkBzd/PjL9mAOimYfI/qeWQWUzXzQzLJPRFo8LwFv6HhVET1m3o402lIaOUsHBdNXo0jrHHKjaUJHRXbRZQUn3qGi2xYnjzEFGt/4Y+WwmrrmlFxd84XK7Eox0oKhbI+71M6DYWz5sBIzj+suoI5X2J9psV8umuZDJeZsY8oZRlV9F+jkk6t/m0Zfe9NtSexp3gmHW5wXDAwtUXEOr6wtcC+4vo4Q8iW5y/wnGg7JBPDu+B48ALzysWEW7T+SV/kXVav2EoYW8MsbQ+CAmZU0KT442GdvyljVlCf+NSTRCImuPUYb/oNJudtMqjUeiJa4IWmDyf5jrvKabx8bE0Zq8oCknKvn9w4qMYCbOgmg5EuW50iITLmNs8PoeYVz77YcJJFtLUuKHbFMJndaLzmcMJw/uSSUz8N0wjzJIDb5LXGoIEh7wMs/KuoFzeZFUiW25DguTLU88F0PxCYN0Rd6jg/pW/8p+QHRT8qxjtViHDb2vkpbU77g6qvECJJ+YcmCojUmV47YyYCAcGwBuYVbyN3NuV8NZBDeDWGIBbD8AvDfgJ3IsA7vnY8pHvWCbSbYS+GKoj9/miJ4o0YSu6pDEiL4W1jCveh+xn6fpXisoTgGkx5mP7KZV/dUINx/7XdL1OR7DGcWYReDmtNOmId44rwQFrQ5X79cTDDVqxRQiCkiVmDW1EgJPOaSs3EkwQ11k10BhU2fZD2WMr25SUDbRrKtscRtnakw3L4i4rW6/I+gneiLDdDsK2hhb28VY+OehQarCmYcw2pZ5/pIaCcY4jrSVQkziT9Vgw6DS0fqTS29cLTBZ0d45QlaXChi2Esu+JUXncN4G1wn2sFWOvFbY7pbA/f/gD8fEQh+CaiMuOHPb245/QHwNkLDwANeQFmqXb/rRD96bRlsQ555OCwphTU0Zxswsjgo5QnJHmIJtqCpzSbl6+T6rXiz8IpqlVF1akarrqHpxbtwl3ivgH1WruKG5QrE1cb42mnBr1KnM2mWDKeSyt75RrowPsvsemVwVsqfodbakFZuBajq9rLrZ9a2HmW2y9D09STd7W0ckYkDsS5I4aXY12bCI7H/eu/bXSxugQbTmTibY+Ktf7Pev8uIjt6WhY11XY70jETQFVa9AFrhZ0NYz2EXRdcAU2teoGxyWDLpUANV77nuULVPk2BaoTkC94yPfi8oXOFb+Z5NGrH81BgiKsoJ8HXduIvB4bPLa9PrDtJaWe1WSe6RqsoYBtwhE40P4VdfYAe+puvMu5YV3QNfpJdG/AzuxTfjLEivylmZLl0A9NqwOa9tBo9sorMCRPkHuGofIKVOq0f22dz1Ypks3siSebFYk15bwavTerupxlwVFYpdBGOeKUj0OyFxF3FXx6Lz2h9KUBXCmf/Ryd3bHp3P718Y7kK9CYfCWnVU7Pg/bjM/xca94oCbTwzPpzLzhfLydKBXqwfMqu6ZQ3k/2Wo3jZwKc/0u25McPkxFehBncF9fWS4uV9JqsV6c+zSdgY/nYOK3ulSF0orDSkvHqoSdsNDWHl2Y4MR4pPs7dVOhoic9q+Pao9mDZJpjm3wrT6j6D+X8o1EWcTGUcnGpSIpvclmtSR4Q5FNF4s/uM8a178W7/x8j8=</diagram></mxfile>
+<mxfile host="www.draw.io" modified="2019-11-05T16:48:17.321Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.2 Safari/605.1.15" etag="mIi386hDnuRFuHH75qoC" version="12.1.9" type="github" pages="1">
+  <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
+    <mxGraphModel dx="1040" dy="1031" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-21" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="480" width="810" height="230" as="geometry"/>
+        </mxCell>
+        <mxCell id="2a3bc250acf0617d-8" value="&lt;b&gt;fsm &lt;/b&gt;Violation report by a user" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=1;fillColor=#ffffff;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;width=210;height=45;" parent="1" vertex="1">
+          <mxGeometry x="30" y="35" width="970" height="745" as="geometry"/>
+        </mxCell>
+        <mxCell id="382b91b5511bd0f7-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;direction=south;" parent="1" vertex="1">
+          <mxGeometry x="130" y="135" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="j2eZt9Gs0FW0rEVfYFhb-5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-8" value="Select the violation" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-6">
+          <mxGeometry x="-0.0045" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="382b91b5511bd0f7-6" value="Violation report acquisition mode&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
+          <mxGeometry x="310" y="120" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-10" value="Take a picture" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-5" target="j2eZt9Gs0FW0rEVfYFhb-9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-5" value="Violation selected" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="310" y="260" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-9" target="j2eZt9Gs0FW0rEVfYFhb-17">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-19" value="Confirm the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-18">
+          <mxGeometry x="-0.4378" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-9" value="Picture of the violation taken" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="570" y="260" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-17" target="j2eZt9Gs0FW0rEVfYFhb-30">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-17" target="j2eZt9Gs0FW0rEVfYFhb-33">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-17" value="Picture sent to the License Plate Recognition API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="570" y="400" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-33" target="j2eZt9Gs0FW0rEVfYFhb-40">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-43" value="confirm and send data" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-41">
+          <mxGeometry x="0.1833" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-33" value="License Plate recognised" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="570" y="620" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-40" target="j2eZt9Gs0FW0rEVfYFhb-42">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-40" value="License Plate recognised" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="230" y="620" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-30" target="j2eZt9Gs0FW0rEVfYFhb-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="271" y="416"/>
+              <mxPoint x="520" y="416"/>
+              <mxPoint x="520" y="320"/>
+              <mxPoint x="571" y="320"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-39" value="take a picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-38">
+          <mxGeometry x="-0.6253" y="-64" relative="1" as="geometry">
+            <mxPoint x="64" y="-69" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-30" value="Picture of the violation requested" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="180" y="510" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="2a3bc250acf0617d-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" parent="1" source="382b91b5511bd0f7-1" target="382b91b5511bd0f7-6" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-2" value="Tap on the&lt;br&gt;camera button" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="2a3bc250acf0617d-9">
+          <mxGeometry y="5" relative="1" as="geometry">
+            <mxPoint x="-4" y="2" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="382b91b5511bd0f7-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="451" y="150"/>
+              <mxPoint x="451" y="90"/>
+              <mxPoint x="371" y="90"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-12" value="Acquire GPS data" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-11">
+          <mxGeometry x="-0.0985" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-9" target="j2eZt9Gs0FW0rEVfYFhb-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="711" y="275"/>
+              <mxPoint x="711" y="220"/>
+              <mxPoint x="631" y="220"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-16" value="Re-take the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="j2eZt9Gs0FW0rEVfYFhb-15">
+          <mxGeometry x="0.0047" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-25" value="" style="endArrow=none;dashed=1;html=1;entryX=1.002;entryY=0.172;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="106" y="593" as="sourcePoint"/>
+            <mxPoint x="907.6200000000001" y="592.5600000000002" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-35" value="[condition 1: &lt;br&gt;picture not &amp;nbsp;readable]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="740" y="515" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-37" value="[condition 2: &lt;br&gt;picture readable]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="740" y="620" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-42" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="130" y="635" width="30" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
