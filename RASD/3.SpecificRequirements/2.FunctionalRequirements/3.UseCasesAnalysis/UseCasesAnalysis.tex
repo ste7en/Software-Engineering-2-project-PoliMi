@@ -75,8 +75,7 @@
 		\hline
 		\textbf{Name} & \textbf{\ic{Municipality} Login}\\ \hline
 		Actors & \ic{Municipality}, SafeStreets\\ \hline
-		Entry Conditions & \ic{Municipality} is connected to the \ic{Municipality} dedicated web
-		site\\ \hline
+		Entry Conditions & \ic{Municipality} is connected to the \ic{Municipality} dedicated web site\\ \hline
 		Events Flow & 
 		\begin{enumerate}
 			\item \ic{Municipality} enters "\ic{Reference code}"
@@ -122,10 +121,9 @@
 		Exit Condition & SafeStreets correctly collected \ic{User report}\\ \hline
 		Exceptions & 
 		\begin{enumerate}
-			\item %TODO ???(Corrupted data: Discard report)
+			\item No \ic{Type of violation} has been selected
 		\end{enumerate}
-		%TODO
-		. \\ 
+		\ic{User} is asked to select a choice for the missing parameter.\\ 
 		\hline
 		\caption*{U\subs{4}}
 	\end{longtable}
@@ -151,12 +149,7 @@
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{Municipality} correctly answered to the \ic{User report}\\ \hline
-		Exceptions & 
-		\begin{enumerate}
-			\item %TODO ???(Corrupted data: Discard report)
-		\end{enumerate}
-		%TODO
-		. \\ 
+		Exceptions & No Exceptions. \\ 
 		\hline
 		\caption*{U\subs{5}}
 	\end{longtable}
@@ -175,14 +168,14 @@
 		Events Flow & 
 		\begin{enumerate}
 			\item \ic{User} presses “Public statistics” button
-			\item \ic{User} select a “period of time”, a “\ic{Type of violation}” and a “specific zone”
+			\item \ic{User} selects a “period of time”, a “\ic{Type of violation}” and a “specific zone”
 			\item SafeStreets show the \ic{User} the required statistics
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{User} correctly visualizes the required \ic{Public statistics}\\ \hline
 		Exceptions &
 		\begin{enumerate}
-			\item No value was chosen for the parameters to be set;
+			\item No value was chosen for the parameters to be set
 		\end{enumerate}
 		\ic{User} is asked to select at least one value for the parameters to be set.\\ 
 		\hline
@@ -204,14 +197,14 @@
 		Events Flow & 
 		\begin{enumerate}
 			\item \ic{Municipality} presses the “Stats” button
-			\item \ic{Municipality} select the parameters
+			\item \ic{Municipality} selects a “period of time”, a “\ic{Type of violation}” and a “specific zone”, then, optionally, a "particular license plate" as well
 			\item SafeStreets shows \ic{Municipality} the required statistics
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{Municipality} correctly visualizes the required \ic{Detailed statistics}\\ \hline
 		Exceptions & 
 		\begin{enumerate}
-			\item No value was chosen for the parameters to be set;
+			\item No value was chosen for the parameters to be set
 		\end{enumerate}
 		\ic{Municipality} is asked to select at least one value for the parameters to be set.\\ 
 		\hline
@@ -264,9 +257,9 @@
 		Exit Condition & \ic{User} correctly visualizes the details about the chosen \ic{User report}\\ \hline
 		Exceptions & 
 		\begin{enumerate}
-			\item \ic{User} has not yet reported any \ic{Traffic violation};
+			\item \ic{User} has not reported any \ic{Traffic violation} yet
 		\end{enumerate}
-		A warning is shown and \ic{User} is sent back to the main page.
+		\ic{User} is reminded he/she has not reported any \ic{Traffic violation} yet.
 		\\ \hline
 		\caption*{U\subs{9}}
 	\end{longtable}
