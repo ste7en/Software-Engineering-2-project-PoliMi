@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Violation",
+					"name": "UserReport",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -208,7 +208,8 @@
 								"$ref": "AAAAAAFuGIbUDx+Log4="
 							},
 							"name": "timestamp",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -284,7 +285,7 @@
 											"top": 223,
 											"width": 120.66259765625,
 											"height": 13,
-											"text": "Violation"
+											"text": "UserReport"
 										},
 										{
 											"_type": "LabelView",
@@ -1218,7 +1219,7 @@
 											"top": 231,
 											"width": 120.30712890625,
 											"height": 13,
-											"text": "AuthMunicipality"
+											"text": "Municipality"
 										},
 										{
 											"_type": "LabelView",
@@ -1290,7 +1291,7 @@
 											"top": 254,
 											"width": 120.30712890625,
 											"height": 13,
-											"text": "-refCode",
+											"text": "-referenceCode",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1815,7 +1816,7 @@
 											"top": 439,
 											"width": 63.2353515625,
 											"height": 13,
-											"text": "Photo"
+											"text": "Picture"
 										},
 										{
 											"_type": "LabelView",
@@ -2520,9 +2521,9 @@
 										"$ref": "AAAAAAFuIjVDDDF4GiA="
 									},
 									"font": "Arial;13;0",
-									"left": 271,
+									"left": 268,
 									"top": 407,
-									"width": 36.86083984375,
+									"width": 43.34814453125,
 									"height": 13,
 									"alpha": -5.37643525322126,
 									"distance": 29.206163733020468,
@@ -2530,7 +2531,7 @@
 										"$ref": "AAAAAAFuIjVDDTF73wU="
 									},
 									"edgePosition": 2,
-									"text": "-photo"
+									"text": "-picture"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -4639,7 +4640,8 @@
 								"$ref": "AAAAAAFuIifIfuU5jow="
 							},
 							"name": "visibilityLevel",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -4660,7 +4662,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "AuthMunicipality",
+					"name": "Municipality",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -4683,7 +4685,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFuIiiAv+fiZyk="
 							},
-							"name": "refCode",
+							"name": "referenceCode",
 							"visibility": "private"
 						}
 					],
@@ -4728,7 +4730,8 @@
 								"$ref": "AAAAAAFuIiiOmOjyi5s="
 							},
 							"name": "email",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					]
 				},
@@ -4738,7 +4741,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Photo",
+					"name": "Picture",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -4752,7 +4755,7 @@
 								"_parent": {
 									"$ref": "AAAAAAFuIjVDDDF3tbU="
 								},
-								"name": "photo",
+								"name": "picture",
 								"reference": {
 									"$ref": "AAAAAAFuIjIINSVW3Sc="
 								},
@@ -4781,7 +4784,8 @@
 								"$ref": "AAAAAAFuIjIINSVW3Sc="
 							},
 							"name": "width",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4790,7 +4794,8 @@
 								"$ref": "AAAAAAFuIjIINSVW3Sc="
 							},
 							"name": "height",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					]
 				},
