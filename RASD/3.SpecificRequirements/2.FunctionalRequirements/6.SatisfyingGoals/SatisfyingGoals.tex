@@ -28,10 +28,8 @@
 	\item[G\subs{2}]Send \ic{User report} to \ic{Municipality} as soon as it is generated;
 	\begin{itemize}
 		\item[R\subs{11}]Send \ic{User report} to \ic{Municipality};
-		\item[R\subs{15}]Guarantees that the data which constitutes the \ic{User report} are not corrupted;
-		%TODO: togliere R31
-		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
-		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
+		\item[R\subs{15}]Validate the data which constitutes the \ic{User report};
+		\item[R\subs{31}]Identify \ic{Municipality} by its \ic{Reference code};
 		\\
 		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} are always online;	
 	\end{itemize}
@@ -53,9 +51,7 @@
 		\item[R\subs{17}]Validate \ic{Municipality} data access request.
 		\item[R\subs{18}]Allow \ic{Municipality} to set specific constraints to define \ic{Detailed statistics};
 		\item[R\subs{19}]Send \ic{Detailed statistics} to the requesting \ic{Municipality};
-		%TODO: togliere R31
-		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
-		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
+		\item[R\subs{31}]Identify \ic{Municipality} by its \ic{Reference code};
 		//
 		\item[D\subs{9}]\ic{Municipality} has institutional credentials (\ic{Reference code} and password) which uses to access the system;
 	\end{itemize}
@@ -77,9 +73,7 @@
 		\item[R\subs{28}]Receive \ic{Accidents} data from \ic{Municipality};
 		\item[R\subs{29}]Generate \ic{Possible interventions} crossing \ic{Municipality} \ic{Accidents} data with SafeStreets Database data.
 		\item[R\subs{30}]Send generated \ic{Possible interventions} to \ic{Municipality};
-		%TODO: togliere R31
-		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
-		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
+		\item[R\subs{31}]Identify \ic{Municipality} by its \ic{Reference code};
 		\\
 		\item[D\subs{8}]\ic{Municipality} grants access to its own \ic{Accidents} Database;
 	\end{itemize}
@@ -87,10 +81,8 @@
 	\item[G\subs{7}]Collect information about \ic{Ticket feedback};
 	\begin{itemize}
 		\item[R\subs{12}]Store \ic{Ticket feedback} in SafeStreets Database;
-		%TODO: togliere R31
-		\item[R\subs{31}]At sign up, \ic{Municipality} must provide a \ic{Reference code};
-		\item[R\subs{32}]Identify \ic{Municipality} by its \ic{Reference code};
-		\item[R\subs{33}]Receive \ic{Ticket feedback} from \ic{Municipality};
+		\item[R\subs{31}]Identify \ic{Municipality} by its \ic{Reference code};
+		\item[R\subs{32}]Receive \ic{Ticket feedback} from \ic{Municipality};
 	\end{itemize}
 
 	\item[G\subs{8}]Allow \ic{Users} to visualize their contribution to SafeStreets;
@@ -104,7 +96,7 @@
 		\item[R\subs{20}]Allow \ic{Users} to request all their \ic{User report} and the related \ic{Ticket feedback} stored in SafeStreets Database at any time;
 		\item[R\subs{21}]Send to a specific \ic{User} his/her \ic{User report} stored;
 		\item[R\subs{22}]Send to a specific \ic{User} the \ic{Ticket feedback} related to his/her \ic{User report};
-		\item[R\subs{33}]Receive \ic{Ticket feedback} from \ic{Municipality}.	
+		\item[R\subs{32}]Receive \ic{Ticket feedback} from \ic{Municipality}.	
 	\end{itemize}
 
 \end{itemize}
