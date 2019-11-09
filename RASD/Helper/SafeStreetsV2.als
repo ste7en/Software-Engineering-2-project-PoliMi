@@ -11,6 +11,7 @@ sig Email { }
 sig User extends RegisteredEntity {
 	individual: one Individual,
 	email: one Email,
+	myReport: set UserReport,
 	pStatistic: UserReport -> PublicStatistic
 } --{ visibilityLevel = 0 }
 
@@ -40,17 +41,20 @@ sig Position {
 // the license plate number have been, for simplicity
 // reasons, modeled as integers instead of strings
 sig UserReport {
+	email: one Email,
 	timestamp: one Int,
 	typeOfViolation: one Int,
 	licensePlateNumber: one Int,
 	picture: one Picture,
 	position: one Position
-} { licensePlateNumber > 0 and timestamp > 0 and typeOfViolation > 0 }
+} { licensePlateNumber > 0 and timestamp > 0 and
+	(typeOfViolation=0 or typeOfViolation=1 or typeOfViolation=2 or typeOfViolation=3) --for simplicity 4 types of violation
+}
 
 one sig SafeStreets {
 	registeredUsers: set User,
 	registeredMunicipalities: set Municipality,
-	violationReports: UserReport -> one User,
+--	violationReports: UserReport -> one User,
 	pStatistic: UserReport -> PublicStatistic,
 	dStatistic: UserReport -> DetailedStatistic
 }
@@ -59,6 +63,8 @@ abstract sig Filter {
 	typeOfViolation: one Int,
 	timestamp: one Int,
 	position: one Position
+} {
+	timestamp>0 and (typeOfViolation=0 or typeOfViolation=1 or typeOfViolation=2 or typeOfViolation=3)
 }
 
 sig PublicFilter extends Filter {}
@@ -66,7 +72,7 @@ sig PublicFilter extends Filter {}
 sig DetailedFilter extends Filter {
 	email: one Email,
 	licensePlateNumber: one Int,
-}
+} { licensePlateNumber > 0}
 
 sig PublicStatistic {
 	pFilter: one PublicFilter
@@ -124,20 +130,28 @@ fact positionBelongsToReport {
 fact metadataBelongsToOnePicture {
 	all m: Metadata | one p: Picture | p.data = m
 }
-fact allUserReportsBelongToSafeStreets {
-	all r: UserReport | one u: User | r -> u in SafeStreets.violationReports
+
+fact UserReportBelongsToOnlyOneUser {
+	all r: UserReport | one u: User | r in u.myReport
 }
 
-fact UserReportInMunicipalityImpliesUserReportInSafeStreets {
+fact publicFilterCorrespondsToOnlyOnePublicStatistic {
+	all pf: PublicFilter | one stat: PublicStatistic | stat.pFilter = pf
+}
+fact detailedFilterCorrespondsToOnlyOneDetailedStatistic {
+	all df: DetailedFilter | one stat: DetailedStatistic | stat.dFilter = df
+}
+
+fact userReportInMunicipalityImpliesUserReportInSafeStreets {
 	all r: UserReport, ds: DetailedStatistic, ss: SafeStreets, m: Municipality | 	
 	r -> ds in m.dStatistic implies r -> ds in ss.dStatistic
 }
-fact UserReportInUserImpliesUserReportInSafeStreets {
+fact userReportInUserImpliesUserReportInSafeStreets {
 	all r: UserReport, ps: PublicStatistic, ss: SafeStreets, u: User | 	
 	r -> ps in u.pStatistic implies r -> ps in ss.pStatistic
 }
 
-fact DetailedStatisticMadeOfReportsRespectingDetailedFilter {
+fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 	all ds: DetailedStatistic, ss: SafeStreets |
 	((getReportsOfDetailedStatistic[ss, ds]).timestamp = ds.dFilter.timestamp) and
 	((getReportsOfDetailedStatistic[ss, ds]).typeOfViolation = ds.dFilter.typeOfViolation) and
@@ -145,7 +159,7 @@ fact DetailedStatisticMadeOfReportsRespectingDetailedFilter {
 	((getReportsOfDetailedStatistic[ss, ds]).email = ds.dFilter.email) and
 	((getReportsOfDetailedStatistic[ss, ds]).licensePlateNumber = ds.dFilter.licensePlateNumber)
 }
-fact PublicStatisticMadeOfReportsRespectingPublicFilter {
+fact publicStatisticMadeOfReportsRespectingPublicFilter {
 	all ps: PublicStatistic, ss: SafeStreets |
 	((getReportsOfPublicStatistic[ss, ps]).timestamp = ps.pFilter.timestamp) and
 	((getReportsOfPublicStatistic[ss, ps]).typeOfViolation = ps.pFilter.typeOfViolation) and
@@ -205,4 +219,4 @@ check sendPublicStatisticOK for 5
 
 ----- RUN
 
-run show for 5 but exactly 3 User, exactly 4 UserReport, exactly 1 Municipality
+run show for 10 but exactly 2 User, exactly 1 Municipality, exactly 3 UserReport, exactly 1 DetailedStatistic, exactly 1 PublicStatistic
