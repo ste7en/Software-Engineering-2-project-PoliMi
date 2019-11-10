@@ -6,13 +6,13 @@
 	
 	\image {10cm} {./Images/Class_Diagrams/Class_Diagram.png} {SafeStreets class diagram} {SafeStreetsClassDiagram}
 	
-	\image{10cm}{./Images/State_Charts/StateChart_InviaViolazione.png}{SafeStreets state chart referred to violation reports by users}{InviaViolazioneStateChart}
+	\image{10cm}{./Images/State_Charts/StateChart_InviaViolazione.png}{SafeStreets state chart referred to \ic{User reports} by \ic{Users}}{InviaViolazioneStateChart}
 	
 	\paragraph{Shared Phenomena}
 	\begin{itemize}
-		\item \ic{User} reports a \ic{Violation}.
-		\item \ic{Municipality} checks a \ic{Violation}.
-		\item A \ic{Violation} causes a \ic{Traffic ticket} issued by the \ic{Municipality}.
+		\item \ic{User} reports a \ic{Traffic violation}.
+		\item \ic{Municipality} checks a \ic{Traffic violation}.
+		\item A \ic{Traffic violation} causes a \ic{Traffic ticket} issued by the \ic{Municipality}.
 		\item \ic{User} and \ic{Municipality} have different permission levels to access the S2B data.
 	\end{itemize}
 		
