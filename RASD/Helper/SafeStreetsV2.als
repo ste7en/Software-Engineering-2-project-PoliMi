@@ -1,8 +1,6 @@
 ----- SIGNATURES
 
-abstract sig RegisteredEntity {
-	--visibilityLevel: one Int
-} --{visibilityLevel = 0 or visibilityLevel = 1}
+abstract sig RegisteredEntity {}
 
 sig Individual { }
 
@@ -11,18 +9,13 @@ sig Email { }
 sig User extends RegisteredEntity {
 	individual: one Individual,
 	email: one Email,
-	myReport: set UserReport,
 	pStatistic: UserReport -> PublicStatistic
-} --{ visibilityLevel = 0 }
+}
 
 sig Municipality extends RegisteredEntity {
 	referenceCode: one Int,
-	--users: set User,
 	dStatistic: UserReport -> DetailedStatistic
-} {
-	--visibilityLevel = 1 and
-	referenceCode > 0
-}
+} { referenceCode > 0 }
 
 sig Metadata { }
 
@@ -41,7 +34,7 @@ sig Position {
 // the license plate number have been, for simplicity
 // reasons, modeled as integers instead of strings
 sig UserReport {
-	email: one Email,
+	user: one User,
 	timestamp: one Int,
 	typeOfViolation: one Int,
 	licensePlateNumber: one Int,
@@ -54,31 +47,29 @@ sig UserReport {
 one sig SafeStreets {
 	registeredUsers: set User,
 	registeredMunicipalities: set Municipality,
---	violationReports: UserReport -> one User,
 	pStatistic: UserReport -> PublicStatistic,
 	dStatistic: UserReport -> DetailedStatistic
 }
 
 abstract sig Filter {
-	typeOfViolation: one Int,
-	timestamp: one Int,
-	position: one Position
-} {
-	timestamp>0 and (typeOfViolation=0 or typeOfViolation=1 or typeOfViolation=2 or typeOfViolation=3)
-}
+	typeOfViolation: lone Int,
+	timestamp: set Int,
+	position: set Position
+} { (#typeOfViolation>0 or #timestamp>0 or #position>0) }
 
 sig PublicFilter extends Filter {}
 
 sig DetailedFilter extends Filter {
-	email: one Email,
-	licensePlateNumber: one Int,
+	licensePlateNumber: lone Int,
 } { licensePlateNumber > 0}
 
 sig PublicStatistic {
+	user: one User,
 	pFilter: one PublicFilter
 }
 
 sig DetailedStatistic {
+	municipality: one Municipality,
 	dFilter: one DetailedFilter
 }
 
@@ -124,46 +115,67 @@ fact userIndividualIsUnique {
 fact pictureBelongsToOneReport {
 	all p: Picture | one r: UserReport | r.picture = p
 }
-fact positionBelongsToReport {
+fact positionBelongsToOneReport {
 	all p: Position | one r: UserReport | r.position = p
 }
 fact metadataBelongsToOnePicture {
 	all m: Metadata | one p: Picture | p.data = m
 }
 
-fact UserReportBelongsToOnlyOneUser {
-	all r: UserReport | one u: User | r in u.myReport
+fact UserReportBelongsToOneUser {
+	all r: UserReport | one u: User | u in r.user
 }
 
-fact publicFilterCorrespondsToOnlyOnePublicStatistic {
+fact publicFilterCorrespondsToOnePublicStatistic {
 	all pf: PublicFilter | one stat: PublicStatistic | stat.pFilter = pf
 }
-fact detailedFilterCorrespondsToOnlyOneDetailedStatistic {
+
+fact publicStatisticUserIsUnique{
+	all ps: PublicStatistic | one u: User | ps.user = u
+}
+
+fact detailedStatisticMunicipalityIsUnique{
+	all ds: DetailedStatistic | one m: Municipality | ds.municipality = m
+}
+
+fact detailedFilterCorrespondsToOneDetailedStatistic {
 	all df: DetailedFilter | one stat: DetailedStatistic | stat.dFilter = df
 }
 
-fact userReportInMunicipalityImpliesUserReportInSafeStreets {
+fact userReportInMunicipalityImpliesUserReportInSafeStreetsAndViceversa {
 	all r: UserReport, ds: DetailedStatistic, ss: SafeStreets, m: Municipality | 	
-	r -> ds in m.dStatistic implies r -> ds in ss.dStatistic
+	r -> ds in m.dStatistic iff r -> ds in ss.dStatistic
 }
-fact userReportInUserImpliesUserReportInSafeStreets {
+fact userReportInUserImpliesUserReportInSafeStreetsAndViceversa {
 	all r: UserReport, ps: PublicStatistic, ss: SafeStreets, u: User | 	
-	r -> ps in u.pStatistic implies r -> ps in ss.pStatistic
+	r -> ps in u.pStatistic iff r -> ps in ss.pStatistic
 }
 
 fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 	all ds: DetailedStatistic, ss: SafeStreets |
-	((getReportsOfDetailedStatistic[ss, ds]).timestamp = ds.dFilter.timestamp) and
-	((getReportsOfDetailedStatistic[ss, ds]).typeOfViolation = ds.dFilter.typeOfViolation) and
-	((getReportsOfDetailedStatistic[ss, ds]).position = ds.dFilter.position) and
-	((getReportsOfDetailedStatistic[ss, ds]).email = ds.dFilter.email) and
-	((getReportsOfDetailedStatistic[ss, ds]).licensePlateNumber = ds.dFilter.licensePlateNumber)
+	( ( (#(ds.dFilter.timestamp)>0 and ((getReportsOfDetailedStatistic[ss, ds]).timestamp in ds.dFilter.timestamp)) or
+		(#(ds.dFilter.timestamp)=0) )
+	and
+	( (#(ds.dFilter.typeOfViolation)>0 and ((getReportsOfDetailedStatistic[ss, ds]).typeOfViolation = ds.dFilter.typeOfViolation)) or
+		(#(ds.dFilter.typeOfViolation)=0) )	
+	and
+	( (#(ds.dFilter.position)>0 and ((getReportsOfDetailedStatistic[ss, ds]).position in ds.dFilter.position)) or
+		(#(ds.dFilter.position)=0) )
+	and
+	( (#(ds.dFilter.licensePlateNumber)>0 and ((getReportsOfDetailedStatistic[ss, ds]).licensePlateNumber = ds.dFilter.licensePlateNumber)) or
+		(#(ds.dFilter.licensePlateNumber)=0) ) )
 }
+
 fact publicStatisticMadeOfReportsRespectingPublicFilter {
 	all ps: PublicStatistic, ss: SafeStreets |
-	((getReportsOfPublicStatistic[ss, ps]).timestamp = ps.pFilter.timestamp) and
-	((getReportsOfPublicStatistic[ss, ps]).typeOfViolation = ps.pFilter.typeOfViolation) and
-	((getReportsOfPublicStatistic[ss, ps]).position = ps.pFilter.position)
+	( ( (#(ps.pFilter.timestamp)>0 and ((getReportsOfPublicStatistic[ss, ps]).timestamp in ps.pFilter.timestamp)) or
+		(#(ps.pFilter.timestamp)=0) )
+	and
+	( (#(ps.pFilter.typeOfViolation)>0 and ((getReportsOfPublicStatistic[ss, ps]).typeOfViolation = ps.pFilter.typeOfViolation)) or
+		(#(ps.pFilter.typeOfViolation)=0) )	
+	and
+	( (#(ps.pFilter.position)>0 and ((getReportsOfPublicStatistic[ss, ps]).position in ps.pFilter.position)) or
+		(#(ps.pFilter.position)=0) ) )
 }
 
 
@@ -213,10 +225,10 @@ assert sendPublicStatisticOK {
 
 ----- CHECKS 
 
-check sendDetailedStatisticOK for 5
+check sendDetailedStatisticOK for 10
 
-check sendPublicStatisticOK for 5
+check sendPublicStatisticOK for 10
 
 ----- RUN
 
-run show for 10 but exactly 2 User, exactly 1 Municipality, exactly 3 UserReport, exactly 1 DetailedStatistic, exactly 1 PublicStatistic
+run show for 10 but exactly 2 User, exactly 1 Municipality, exactly 4 UserReport, exactly 2 DetailedStatistic, exactly 2 PublicStatistic
