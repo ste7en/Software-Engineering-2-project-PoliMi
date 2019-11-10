@@ -111,7 +111,7 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		\begin{enumerate}
 			\item \ic{User} takes a picture of the \ic{Traffic violation}
 			\item \ic{User} presses the “Confirm” button
-			\item SafeStreets receive \ic{User picture} and forward it to the \ic{License plate recognition service}
+			\item SafeStreets receives \ic{User picture} and forward it to the \ic{License plate recognition service}
 			\item \ic{License plate recognition service} sends back to SafeStreets a text representing the \ic{Recognized license plate}
 			\item \ic{User} selects a \ic{Type of violation} and presses the “Send” button
 			\item SafeStreets stores the newly generated \ic{User report} in its own Database
@@ -143,7 +143,7 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		Events Flow & 
 		\begin{enumerate}
 			\item \ic{Municipality} presses “Reports” button
-			\item \ic{Municipality} select a \ic{User report} to answer
+			\item \ic{Municipality} selects a \ic{User report} to answer
 			\item \ic{Municipality} taps “Confirm” or “Discard” button (in the second case selects a reason as well) to generate the \ic{Ticket feedback}
 			\item SafeStreets receives the \ic{Ticket feedback}
 		\end{enumerate}
@@ -169,7 +169,7 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		\begin{enumerate}
 			\item \ic{User} presses “Public statistics” button
 			\item \ic{User} selects a “period of time”, a “\ic{Type of violation}” and a “specific zone”
-			\item SafeStreets show the \ic{User} the required statistics
+			\item SafeStreets shows the \ic{User} the required statistics
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{User} correctly visualizes the required \ic{Public statistics}\\ \hline
@@ -177,7 +177,7 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		\begin{enumerate}
 			\item No value was chosen for the parameters to be set
 		\end{enumerate}
-		\ic{User} is asked to select at least one value for the parameters to be set.\\ 
+		\ic{User} is asked to select at least one value between the filtering parameters.\\ 
 		\hline
 		\caption*{U\subs{6}}
 	\end{longtable}
@@ -206,7 +206,7 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		\begin{enumerate}
 			\item No value was chosen for the parameters to be set
 		\end{enumerate}
-		\ic{Municipality} is asked to select at least one value for the parameters to be set.\\ 
+		\ic{Municipality} is asked to select at least one value between the filtering parameters.\\ 
 		\hline
 		\caption*{U\subs{7}}
 	\end{longtable}
@@ -225,9 +225,9 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		Entry Conditions & \ic{Municipality} grants SafeStreets access to its own \ic{Accidents} Database\\ \hline
 		Events Flow & 
 		\begin{enumerate}
-			\item A certain number of \ic{User report} for a particular zone of the city is reached
+			\item A certain number of \ic{User reports} for a particular zone of the city is reached
 			\item SafeStreets identifies the precise area in which a \ic{Possible intervention} could be carried out
-			\item SafeStreets send to \ic{Municipality} the \ic{Possible intervention} 
+			\item SafeStreets sends to \ic{Municipality} the \ic{Possible intervention} 
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & \ic{Municipality} correctly receives the suggested \ic{Possible intervention}\\ \hline
