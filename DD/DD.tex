@@ -1,0 +1,113 @@
+\documentclass{report}
+\usepackage{comment, subfiles, graphicx, caption, longtable, subfig, fancyhdr}
+\usepackage{float} %Used to force image to appear in the section in which it's declared
+\usepackage[hidelinks]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+%SECTION COMMANDS: here we include the commands for formatting and other purposes
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+\newcommand{\sups}[1]{\ensuremath{^{\textrm{#1}}}}
+
+\newcommand{\subs}[1]{\ensuremath{_{\textrm{#1}}}}
+
+\newcommand{\ic}[1]{\textit{#1}}
+
+\newcommand{\image}[4]{
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth, height = {#1}, keepaspectratio]{#2}
+	\caption*{#3}
+	\label{#4}
+
+	\label{fig:nonfloat} %Used to force image to appear in the section in which it's declared
+	\end{figure}
+}
+
+%Alligns two images in a row 
+%% TODO: delete if unused
+\newcommand{\twoimages}[5]{
+	\captionsetup[subfigure]{labelformat = empty}
+	\begin{figure}[H]
+		\begin{center}
+	        	\subfloat[#3]{
+			\includegraphics[height=#1, keepaspectratio]{#2}
+	        	}
+        		\hspace{25mm}
+	        	\subfloat[#5]{
+			\includegraphics[height=#1, keepaspectratio]{#4}
+		}
+		\end{center}
+	\end{figure}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\color{gray}{\normalsize{DD - 1.0}}}
+\lfoot{\textcolor{gray}{\small{Copyright © 2019, Ferrara Fabiana,\newline Formicola Stefano, Guerra Leonardo – All rights reserved}}}
+\rfoot{\textcolor{gray}{\newline \thepage}}
+\addtocontents{toc}{\protect\thispagestyle{fancy}}
+
+
+\begin{document}
+	\pagenumbering{gobble}
+	\begin{titlepage}
+		\centering	
+		\vfill
+		{
+			\includegraphics[width =\linewidth, height = 4cm, keepaspectratio]{./Images/PolitecnicoLogo.png}
+			\label{fig:PolitecnicoLogo}
+			\large \\[2ex]M.Sc. Computer Science and Engineering\\
+			\large Software Engineering 2 Project\\[9ex]			
+			\huge Design Document\\[4ex]
+			\image{3cm}{Images/Logo.png}{}{Logo}
+
+			\normalsize Ferrara Fabiana, Formicola Stefano, Guerra Leonardo\\[1.5ex]
+			\normalsize 11 November 2019 \\[1.5ex]
+			\normalsize GitHub Repository: https://github.com/ste7en/FerraraFormicolaGuerra\\[3ex]
+			\normalsize Version 0.1
+
+
+		}
+		
+	\end{titlepage}
+
+
+	
+	\newpage
+	\pagenumbering{arabic}
+	\tableofcontents
+	\thispagestyle{fancy}
+	
+
+	
+	\subfile{1.Introduction/Introduction.tex}
+	\subfile{2.ArchitecturalDesign/ArchitecturalDesign.tex}
+	\subfile{3.UserInterfaceDesign/UserInterfaceDesign.tex}
+	\subfile{4.RequirementsTraceability/RequirementsTraceability.tex}
+	\subfile{5.ImplementationIntegrationTestPlan/ImplementationIntegrationTestPlan.tex}
+		
+	\chapter{Effort Spent}
+	\thispagestyle{fancy}
+		\paragraph{Ferrara Fabiana} Total hours of work: 
+			\begin{itemize}
+				\item 1h General LaTeX setting.
+				\item xxh DD Review homework
+			\end{itemize}
+		\paragraph{Formicola Stefano} Total hours of work: 
+			\begin{itemize}
+				\item 1h General LaTeX setting.
+				\item xxh DD Review homework
+			\end{itemize}
+		\paragraph{Guerra Leonardo} Total hours of work: 
+			\begin{itemize}
+				\item 1h General LaTeX setting.
+				\item xxh DD Review homework
+			\end{itemize}
+	\chapter{References}
+	\thispagestyle{fancy}
+	\begin{itemize}
+				\item[1]E. Di Nitto. \ic{Lecture Slides}. Politecnico di Milano.
+	\end{itemize}
+	
+\end{document}
