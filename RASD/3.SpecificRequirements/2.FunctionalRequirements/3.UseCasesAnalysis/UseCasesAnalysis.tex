@@ -8,8 +8,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{User Sign Up}\\ \hline
-		Actors & \ic{User}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U1: User Sign Up}\\ \hline
+		Actors & \ic{User}\\ \hline
 		Entry Conditions & \ic{User} successfully installed SafeStreets application on the smartphone\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -43,8 +43,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{User Login}\\ \hline
-		Actors & \ic{User}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U2: \ic{User} Login}\\ \hline
+		Actors & \ic{User}\\ \hline
 		Entry Conditions & \ic{User} successfully installed SafeStreets application on the smartphone and registered on SafeStreets\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -73,8 +73,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{Municipality} Login}\\ \hline
-		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U3: \ic{Municipality} Login}\\ \hline
+		Actors & \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{Municipality} is connected to the \ic{Municipality} dedicated web site\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -104,15 +104,15 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{SafeStreets sends \ic{User report} to \ic{Municipality}}\\ \hline
-		Actors & \ic{User}, SafeStreets, \ic{License plate recognition service}, \ic{Municipality}\\ \hline
+		\textbf{Name} & \textbf{U4: \ic{User} sends \ic{User report} to \ic{Municipality}}\\ \hline
+		Actors & \ic{User}, \ic{License plate recognition service}, \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{User} successfully logged into SafeStreets and installed SafeStreets application on the smartphone\\ \hline
 		Events Flow & 
 		\begin{enumerate}
 			\item \ic{User} takes a picture of the \ic{Traffic violation}
 			\item \ic{User} presses the “Confirm” button
 			\item SafeStreets receives \ic{User picture} and forward it to the \ic{License plate recognition service}
-			\item \ic{License plate recognition service} sends back to SafeStreets a text representing the \ic{Recognized license plate}
+			\item \ic{License plate recognition service} sends back to SafeStreets a text representing the \ic{Recognized license plate}, if it is successfully recognized
 			\item \ic{User} selects a \ic{Type of violation} and presses the “Send” button
 			\item SafeStreets stores the newly generated \ic{User report} in its own Database
 			\item SafeStreets sends \ic{Municipality} the newly generated \ic{User report}
@@ -122,8 +122,10 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 		Exceptions & 
 		\begin{enumerate}
 			\item No \ic{Type of violation} has been selected
+			\item The \ic{License plate recognition service} couldn't recognize a license plate inside the \ic{User picture}
 		\end{enumerate}
-		\ic{User} is asked to select a choice for the missing parameter.\\ 
+		Exception 1: \ic{User} is asked to select a choice for the missing parameter  \newline
+		Exception 2: \ic{User} is asked to re-take the picture\\ 
 		\hline
 		\caption*{U\subs{4}}
 	\end{longtable}
@@ -137,8 +139,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{Municipality} answers to a \ic{User report}}\\ \hline
-		Actors & SafeStreets, \ic{Municipality}\\ \hline
+		\textbf{Name} & \textbf{U5: \ic{Municipality} answers to a \ic{User report}}\\ \hline
+		Actors & \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{Municipality} successfully logged into SafeStreets\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -162,8 +164,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{User} visualizes \ic{Public statistics}}\\ \hline
-		Actors & \ic{User}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U6: \ic{User} visualizes \ic{Public statistics}}\\ \hline
+		Actors & \ic{User}\\ \hline
 		Entry Conditions & \ic{User} successfully logged into SafeStreets\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -191,8 +193,8 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{Municipality} visualizes \ic{Detailed statistics}}\\ \hline
-		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U7: \ic{Municipality} visualizes \ic{Detailed statistics}}\\ \hline
+		Actors & \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{Municipality} successfully logged into SafeStreets\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -214,14 +216,13 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 
 %--- --- --- --- ---
 
-\newpage
 % U8:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{SafeStreets} suggests \ic{Possible interventions} to \ic{Municipality}}\\ \hline
-		Actors & \ic{Municipality}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U8: \ic{SafeStreets} suggests \ic{Possible interventions} to \ic{Municipality}}\\ \hline
+		Actors & \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{Municipality} grants SafeStreets access to its own \ic{Accidents} Database\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -239,13 +240,14 @@ i st\documentclass[../../../rasd.tex]{subfiles}
 
 %--- --- --- --- ---
 
+\newpage
 % U9:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{\ic{User} visualizes his/her contribution to SafeStreets}\\ \hline
-		Actors & \ic{User}, SafeStreets\\ \hline
+		\textbf{Name} & \textbf{U9: \ic{User} visualizes his/her contribution to SafeStreets}\\ \hline
+		Actors & \ic{User}\\ \hline
 		Entry Conditions & \ic{User} successfully logged into SafeStreets\\ \hline
 		Events Flow & 
 		\begin{enumerate}
