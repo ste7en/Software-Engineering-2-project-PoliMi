@@ -63,6 +63,8 @@ sig DetailedFilter extends Filter {
 	licensePlateNumber: lone Int,
 } { licensePlateNumber > 0}
 
+// Public Statistics are a subset of Detailed Statistics.
+
 sig PublicStatistic {
 	user: one User,
 	pFilter: one PublicFilter
@@ -107,12 +109,12 @@ fact uniqueRefCodeForMunicipalities {
 	all m1, m2: Municipality | (m1 != m2 iff m1.referenceCode != m2.referenceCode)
 }
 
-// All Users belong to SafeStreets are registered
+// All Users belonging to SafeStreets are registered
 fact allUsersBelongToSafeStreets {
 	all u: User | u in SafeStreets.registeredUsers
 }
 
-// All Municipalities belong to SafeStreets are registered 
+// All Municipalities belonging to SafeStreets are registered 
 fact allMunicipalitiesBelongToSafeStreets {
 	all m: Municipality | m in SafeStreets.registeredMunicipalities
 }
@@ -175,8 +177,8 @@ fact userReportInUserImpliesUserReportInSafeStreetsAndViceversa {
 }
 
 // The following fact ensures that all the Detailed Statistics, made by the Municipality,
-// can iclude all the User reports respecting every selected filter. 
-// It's not mandatory select all the filters. 
+// must include all the User reports respecting every selected filter. 
+// It's not mandatory to select all the filters, but at least one has to be selected. 
 
 fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 	all ds: DetailedStatistic, ss: SafeStreets |
@@ -194,9 +196,8 @@ fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 }
 
 // The following fact ensures that all the Public Statistics, made by the User, 
-// can include all the User reports respecting every selected filter. 
-// It's not mandatory select all the filters. 
-// Public Statistics are a subset of Detailed Statistics.
+// must include all the User reports respecting every selected filter. 
+// It's not mandatory to select all the filters, but at least one has to be selected. 
 
 fact publicStatisticMadeOfReportsRespectingPublicFilter {
 	all ps: PublicStatistic, ss: SafeStreets |
@@ -235,8 +236,8 @@ pred show{}
 
 ----- ASSERTIONS
 
-// The following assertion wants to check that all the Detailed Statistics, 
-// reporting all the User reports made by all the Detailed filters selected, are correctly sent to the Municipality. 
+// The User reports selected by the Detailed filter, are correctly sent to the Municipality, 
+// which requested the corresponding Detailed statistic. 
 // The previous condition holds by defining this assertion.
 assert sendDetailedStatisticOK {
 	all m,m': Municipality, f: DetailedFilter, ss: SafeStreets, ds: DetailedStatistic |
@@ -247,8 +248,8 @@ assert sendDetailedStatisticOK {
 	)
 }
 
-// The following assertion wants to check that all the Public Statistics, 
-// reporting all the User reports made by all the Public filters selected, are correctly sent to the User. 
+// The User reports selected by the Public filter, are correctly sent to the User, 
+// who requested the corresponding Public statistic. 
 // The previous condition holds by defining this assertion.
 assert sendPublicStatisticOK {
 	all u,u': User, f: PublicFilter, ss: SafeStreets, ps: PublicStatistic |
