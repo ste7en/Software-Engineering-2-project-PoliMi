@@ -1,104 +1,167 @@
-<mxfile host="www.draw.io" modified="2019-11-10T16:50:42.083Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15" etag="mftkdbYwEzikQkaINIyF" version="12.2.3" type="github" pages="1">
+<mxfile host="www.draw.io" modified="2019-11-15T10:59:29.880Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15" etag="Bdzcj6JmDikNbhel23zi" version="12.2.6" type="github" pages="1">
   <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
-    <mxGraphModel dx="1095" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1140" dy="912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="2a3bc250acf0617d-8" value="&lt;b&gt;fsm &lt;/b&gt;Violation report by a user" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=1;fillColor=#ffffff;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;width=210;height=45;" parent="1" vertex="1">
-          <mxGeometry x="30" y="35" width="970" height="745" as="geometry"/>
+        <mxCell id="2a3bc250acf0617d-8" value="&lt;b&gt;fsm &lt;/b&gt;Violation report by a user" style="shape=umlFrame;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeColor=#000000;strokeWidth=1;fillColor=#ffffff;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;width=205;height=43;" parent="1" vertex="1">
+          <mxGeometry x="40" y="52" width="970" height="745" as="geometry"/>
         </mxCell>
         <mxCell id="382b91b5511bd0f7-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;direction=south;" parent="1" vertex="1">
-          <mxGeometry x="130" y="135" width="30" height="30" as="geometry"/>
+          <mxGeometry x="110" y="135" width="30" height="30" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="382b91b5511bd0f7-6" target="j2eZt9Gs0FW0rEVfYFhb-5" edge="1">
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="_PtXi-9Gh8Q9wvSlbxf3-1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-8" value="Select the violation" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="j2eZt9Gs0FW0rEVfYFhb-6" vertex="1" connectable="0">
-          <mxGeometry x="-0.0045" relative="1" as="geometry">
-            <mxPoint as="offset"/>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endSize=8;" edge="1" parent="1" source="382b91b5511bd0f7-6" target="j2eZt9Gs0FW0rEVfYFhb-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="361" y="100"/>
+              <mxPoint x="970" y="100"/>
+              <mxPoint x="970" y="671"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-48" value="cancel" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;fontSize=14;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-40">
+          <mxGeometry x="0.5769" relative="1" as="geometry">
+            <mxPoint x="-226" y="-0.5" as="offset"/>
           </mxGeometry>
         </mxCell>
         <mxCell id="382b91b5511bd0f7-6" value="Violation report acquisition mode&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="310" y="120" width="120" height="60" as="geometry"/>
+          <mxGeometry x="300" y="120" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-10" value="Take a picture" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-5" target="j2eZt9Gs0FW0rEVfYFhb-9" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-1" value="GPS data acquisition" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="480" y="120" width="120" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-5" value="Violation selected" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="310" y="260" width="120" height="60" as="geometry"/>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-1" target="_PtXi-9Gh8Q9wvSlbxf3-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="180" as="sourcePoint"/>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-9" target="j2eZt9Gs0FW0rEVfYFhb-17" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-19" value="Confirm the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="j2eZt9Gs0FW0rEVfYFhb-18" vertex="1" connectable="0">
-          <mxGeometry x="-0.4378" y="-2" relative="1" as="geometry">
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-6" value="take a picture of&lt;br&gt;the violation with&lt;br&gt;the license plate" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-5">
+          <mxGeometry x="-0.2667" y="2" relative="1" as="geometry">
             <mxPoint as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-9" value="Picture of the violation taken" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="570" y="260" width="120" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-17" target="j2eZt9Gs0FW0rEVfYFhb-33" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-17" value="Picture sent to the License Plate Recognition API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="570" y="400" width="120" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-33" target="j2eZt9Gs0FW0rEVfYFhb-40" edge="1">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-43" value="confirm and send data" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="j2eZt9Gs0FW0rEVfYFhb-41" vertex="1" connectable="0">
-          <mxGeometry x="0.1833" relative="1" as="geometry">
-            <mxPoint x="-1" as="offset"/>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-4" target="j2eZt9Gs0FW0rEVfYFhb-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="330.66666666666674" as="targetPoint"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-33" value="License Plate recognised" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="570" y="620" width="120" height="60" as="geometry"/>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-8" value="confirm the&lt;br&gt;picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-7">
+          <mxGeometry x="0.0124" y="-5" relative="1" as="geometry">
+            <mxPoint x="5" y="4" as="offset"/>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-40" target="j2eZt9Gs0FW0rEVfYFhb-42" edge="1">
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-44" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="330" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-4" value="Picture of the violation taken" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="740" y="300" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-17" target="_PtXi-9Gh8Q9wvSlbxf3-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="419.5" y="330" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-17" value="Picture sent to the License Plate Recognition API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
+          <mxGeometry x="499.5" y="300" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-47" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="530" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-52" value="select the &lt;br&gt;violation" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-33" target="_PtXi-9Gh8Q9wvSlbxf3-51">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-40" value="License Plate recognised" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
-          <mxGeometry x="230" y="620" width="120" height="60" as="geometry"/>
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-33" value="License Plate recognised" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" parent="1" vertex="1">
+          <mxGeometry x="200" y="500" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-53" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;strokeColor=#000000;endSize=8;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-51" target="j2eZt9Gs0FW0rEVfYFhb-42">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-54" value="confirm and&lt;br&gt;send data" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-53">
+          <mxGeometry x="-0.148" y="2" relative="1" as="geometry">
+            <mxPoint x="12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-57" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;fontSize=14;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-51">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="670" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="260" y="730"/>
+              <mxPoint x="490" y="730"/>
+              <mxPoint x="700" y="730"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-51" value="Report filled&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="640" width="120" height="60" as="geometry"/>
         </mxCell>
         <mxCell id="2a3bc250acf0617d-9" style="edgeStyle=orthogonalEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" parent="1" source="382b91b5511bd0f7-1" target="382b91b5511bd0f7-6" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-2" value="Tap on the&lt;br&gt;camera button" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="2a3bc250acf0617d-9" vertex="1" connectable="0">
+        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-2" value="Tap on the&lt;br&gt;camera button&lt;br&gt;to report a violation" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="2a3bc250acf0617d-9" vertex="1" connectable="0">
           <mxGeometry y="5" relative="1" as="geometry">
             <mxPoint x="-4" y="2" as="offset"/>
           </mxGeometry>
         </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="382b91b5511bd0f7-6" target="382b91b5511bd0f7-6" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="451" y="150"/>
-              <mxPoint x="451" y="90"/>
-              <mxPoint x="371" y="90"/>
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-12" value="Acquire GPS data" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="j2eZt9Gs0FW0rEVfYFhb-11" vertex="1" connectable="0">
-          <mxGeometry x="-0.0985" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset"/>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="j2eZt9Gs0FW0rEVfYFhb-9" target="j2eZt9Gs0FW0rEVfYFhb-9" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="711" y="275"/>
-              <mxPoint x="711" y="220"/>
-              <mxPoint x="631" y="220"/>
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j2eZt9Gs0FW0rEVfYFhb-16" value="Re-take the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" parent="j2eZt9Gs0FW0rEVfYFhb-15" vertex="1" connectable="0">
-          <mxGeometry x="0.0047" y="-2" relative="1" as="geometry">
-            <mxPoint as="offset"/>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="j2eZt9Gs0FW0rEVfYFhb-42" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
-          <mxGeometry x="130" y="635" width="30" height="30" as="geometry"/>
+          <mxGeometry x="525" y="655" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-4" target="_PtXi-9Gh8Q9wvSlbxf3-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="345"/>
+              <mxPoint x="910" y="380"/>
+              <mxPoint x="801" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-10" value="re-take &lt;br&gt;the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-9">
+          <mxGeometry x="-0.4444" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-26" value="License Plate&lt;br&gt;recognizable?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="300" y="286.5" width="120" height="87" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-27" value="no" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;" edge="1" source="_PtXi-9Gh8Q9wvSlbxf3-26" parent="1" target="_PtXi-9Gh8Q9wvSlbxf3-30">
+          <mxGeometry x="-0.8536" relative="1" as="geometry">
+            <mxPoint x="500" y="430" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="360" y="430"/>
+            </Array>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-28" value="yes" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=top;endArrow=open;endSize=8;strokeColor=#ff0000;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="_PtXi-9Gh8Q9wvSlbxf3-26" parent="1" target="j2eZt9Gs0FW0rEVfYFhb-33">
+          <mxGeometry x="-0.7705" relative="1" as="geometry">
+            <mxPoint x="260" y="490" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="260" y="330"/>
+            </Array>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-30" target="_PtXi-9Gh8Q9wvSlbxf3-4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-34" value="re-take the picture" style="text;html=1;resizable=0;points=[];align=center;verticalAlign=middle;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="_PtXi-9Gh8Q9wvSlbxf3-33">
+          <mxGeometry x="-0.1057" relative="1" as="geometry">
+            <mxPoint x="-13" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-46" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;" edge="1" parent="1" source="_PtXi-9Gh8Q9wvSlbxf3-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="430" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_PtXi-9Gh8Q9wvSlbxf3-30" value="&lt;i&gt;License Plate not recognized&lt;/i&gt; notification" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="1">
+          <mxGeometry x="499.5" y="400" width="120" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
