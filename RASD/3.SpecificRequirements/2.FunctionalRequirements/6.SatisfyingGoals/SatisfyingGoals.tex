@@ -15,6 +15,7 @@
 		\item[R\subs{8}]Receive \ic{Recognized license plate} from the \ic{License plate recognition service};
 		\item[R\subs{9}]Create \ic{User report};
 		\item[R\subs{10}]Store \ic{User report} in SafeStreets Database;
+		\item[R\subs{33}]Allow \ic{User} to re-take the \ic{User picture};
 		\\
 		\item[D\subs{1}]Data inserted by the \ic{User} at sign up corresponds to their real data;
 		\item[D\subs{2}]\ic{User position} collected at a certain instant corresponds to the acual position of the \ic{User} at that exact moment;
@@ -22,7 +23,6 @@
 		\item[D\subs{4}]\ic{Users} own a working smartphone which has access to Internet connection;
 		\item[D\subs{5}]\ic{Users} own a working smartphone which has a working GPS antenna;
 		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} is always online;
-		\item[D\subs{7}]\ic{License plate recognition service} always provides a text representing a correct recognition of the license plate in the \ic{User picture};
 	\end{itemize}
 
 	\item[G\subs{2}]Send \ic{User report} to \ic{Municipality} as soon as it is generated;
@@ -38,6 +38,7 @@
 	\begin{itemize}
 		\item[R\subs{4}]Receive \ic{User picture};
 		\item[R\subs{7}]Send \ic{User picture} to the \ic{License plate recognition service};
+		\item[R\subs{33}]Allow \ic{User} to re-take the \ic{User picture};
 		\\
 		\item[D\subs{6}]SafeStreets and \ic{License plate recognition service} are always online;
 	\end{itemize}
@@ -53,7 +54,7 @@
 		\item[R\subs{19}]Send \ic{Detailed statistics} to the requesting \ic{Municipality};
 		\item[R\subs{31}]Identify \ic{Municipality} by its \ic{Reference code};
 		\\
-		\item[D\subs{9}]\ic{Municipality} has institutional credentials (\ic{Reference code} and password) which uses to access the system;
+		\item[D\subs{7}]\ic{Municipality} has institutional credentials (\ic{Reference code} and password) which uses to access the system;
 	\end{itemize}
 
 	\item[G\subs{5}]Allow \ic{Users} to visualize \ic{Public statistics};
