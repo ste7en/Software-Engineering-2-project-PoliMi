@@ -97,59 +97,86 @@ fun retrieveReportsToPublicStatistic [ss:SafeStreets, ps: PublicStatistic]: User
 
 ----- FACTS
 
+//All Emails are associated to a unique User
 fact uniqueEmailForUsers {
 	all e: Email | one u: User | u.email = e
 }
+
+// All Municipalities have a unique Reference Code
 fact uniqueRefCodeForMunicipalities {
 	all m1, m2: Municipality | (m1 != m2 iff m1.referenceCode != m2.referenceCode)
 }
+
+// All Users belong to SafeStreets are registered
 fact allUsersBelongToSafeStreets {
 	all u: User | u in SafeStreets.registeredUsers
 }
+
+// All Municipalities belong to SafeStreets are registered 
 fact allMunicipalitiesBelongToSafeStreets {
 	all m: Municipality | m in SafeStreets.registeredMunicipalities
 }
+
+// All Individuals are associated to a unique User
 fact userIndividualIsUnique {
 	all i: Individual | one u: User | u.individual = i
 }
+
+// All Pictures belong to one User report
 fact pictureBelongsToOneReport {
 	all p: Picture | one r: UserReport | r.picture = p
 }
+
+// All Positions belong to one User report
 fact positionBelongsToOneReport {
 	all p: Position | one r: UserReport | r.position = p
 }
+
+// All Metadata belong to one picture
 fact metadataBelongsToOnePicture {
 	all m: Metadata | one p: Picture | p.data = m
 }
 
+// All User reports belong to one User
 fact UserReportBelongsToOneUser {
 	all r: UserReport | one u: User | u in r.user
 }
 
+// All Public Filters belong to one Public Statistic
 fact publicFilterCorrespondsToOnePublicStatistic {
 	all pf: PublicFilter | one stat: PublicStatistic | stat.pFilter = pf
 }
 
+// All Public Statistics are associated to a unique User
 fact publicStatisticUserIsUnique{
 	all ps: PublicStatistic | one u: User | ps.user = u
 }
 
+// All Detailed Statistics are associated to a unique Municipality
 fact detailedStatisticMunicipalityIsUnique{
 	all ds: DetailedStatistic | one m: Municipality | ds.municipality = m
 }
 
+// All Detailed Filters belong to one Detailed Statistic
 fact detailedFilterCorrespondsToOneDetailedStatistic {
 	all df: DetailedFilter | one stat: DetailedStatistic | stat.dFilter = df
 }
 
+// All User reports belonging to Municipality are included in SafeStreets and viceversa
 fact userReportInMunicipalityImpliesUserReportInSafeStreetsAndViceversa {
 	all r: UserReport, ds: DetailedStatistic, ss: SafeStreets, m: Municipality | 	
 	r -> ds in m.dStatistic iff r -> ds in ss.dStatistic
 }
+
+// All User reports belonging to User are included in SafeStreets and viceversa
 fact userReportInUserImpliesUserReportInSafeStreetsAndViceversa {
 	all r: UserReport, ps: PublicStatistic, ss: SafeStreets, u: User | 	
 	r -> ps in u.pStatistic iff r -> ps in ss.pStatistic
 }
+
+// The following fact ensures that all the Detailed Statistics, made by the Municipality,
+// can iclude all the User reports respecting every selected filter. 
+// It's not mandatory select all the filters. 
 
 fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 	all ds: DetailedStatistic, ss: SafeStreets |
@@ -165,6 +192,11 @@ fact detailedStatisticMadeOfReportsRespectingDetailedFilter {
 	( (#(ds.dFilter.licensePlateNumber)>0 and ((getReportsOfDetailedStatistic[ss, ds]).licensePlateNumber = ds.dFilter.licensePlateNumber)) or
 		(#(ds.dFilter.licensePlateNumber)=0) ) )
 }
+
+// The following fact ensures that all the Public Statistics, made by the User, 
+// can include all the User reports respecting every selected filter. 
+// It's not mandatory select all the filters. 
+// Public Statistics are a subset of Detailed Statistics.
 
 fact publicStatisticMadeOfReportsRespectingPublicFilter {
 	all ps: PublicStatistic, ss: SafeStreets |
@@ -203,6 +235,9 @@ pred show{}
 
 ----- ASSERTIONS
 
+// The following assertion wants to check that all the Detailed Statistics, 
+// reporting all the User reports made by all the Detailed filters selected, are correctly sent to the Municipality. 
+// The previous condition holds by defining this assertion.
 assert sendDetailedStatisticOK {
 	all m,m': Municipality, f: DetailedFilter, ss: SafeStreets, ds: DetailedStatistic |
 	sendDetailedStatistic[f,m,m',ss,ds] implies
@@ -212,6 +247,9 @@ assert sendDetailedStatisticOK {
 	)
 }
 
+// The following assertion wants to check that all the Public Statistics, 
+// reporting all the User reports made by all the Public filters selected, are correctly sent to the User. 
+// The previous condition holds by defining this assertion.
 assert sendPublicStatisticOK {
 	all u,u': User, f: PublicFilter, ss: SafeStreets, ps: PublicStatistic |
 	sendPublicStatistic[f,u,u',ss,ps] implies
