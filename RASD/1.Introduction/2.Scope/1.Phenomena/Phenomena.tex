@@ -1,0 +1,51 @@
+\documentclass[../../RASD.tex]{subfiles}
+\begin{document}
+	\newcommand{\addLine}{\\ \hline}
+	\newpage
+	\subsection{World and Machine phenomena\label{sect:world_machine_phenomena}}
+	\begin{center}
+		\begin{tabular}{| p{7cm} | c | c |}
+			\hline
+			\textbf{Phenomena} & \textbf{Shared} & \textbf{Who controls it} \addLine
+			
+			The \ic{User} signs up to SafeStreets & Y & W \addLine
+			
+			The \ic{Municipality} logs in to SafeStreets using its \ic{Reference code} & Y & W \addLine
+			
+			The \ic{User} reports a \ic{Traffic violation} through a \ic{User report} & Y & W \addLine
+			
+			The \ic{User} takes a \ic{User picture} of the \ic{Traffic violation} & Y & W \addLine
+			
+			The Machine sends received \ic{User picture}(s) to the \ic{License plate recognition service} & Y & M \addLine
+			
+			The \ic{License plate recognition service} recognizes a license plate & N & W \addLine
+			
+			The \ic{License plate recognition service} can't recognize a license plate & N & W \addLine
+			
+			The Machine locates the \ic{User}'s position & N & M \addLine
+			
+			The Machine adds a \ic{Timestamp} to each \ic{User report} & N & M \addLine
+			
+			The \ic{User} sends \ic{User report} data & Y & W \addLine
+			
+			The Machine receives \ic{User report} data & Y & M \addLine
+			
+			The \ic{Municipality} issues \ic{Traffic tickets} & N & W \addLine
+			
+			The \ic{Municipality} generates \ic{Ticket feedback}(s) on issued \ic{Traffic ticket}(s) & Y & W \addLine
+	
+			The Machine generates statistics on received \ic{User report}(s) & N & M \addLine
+			
+			The \ic{User} visualizes \ic{Public statistics} & Y & W \addLine
+			
+			The \ic{Municipality} visualizes \ic{Detailed statistics} & Y & W \addLine
+			
+			The \ic{Municipality} gives access to its \ic{Accidents} data & Y & W \addLine
+			
+			The Machine suggests \ic{Possible interventions} to the \ic{Municipality} & Y & M \addLine
+						
+		\end{tabular}
+		
+	\end{center}
+	
+\end{document}
