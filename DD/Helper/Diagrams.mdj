@@ -58720,7 +58720,7 @@
 											"top": 269,
 											"width": 248.1806640625,
 											"height": 13,
-											"text": "+loadReports(u: User): Array<UserReport>",
+											"text": "+loadReports(user: String): JSON",
 											"horizontalAlignment": 0
 										},
 										{
@@ -58737,7 +58737,7 @@
 											"top": 284,
 											"width": 248.1806640625,
 											"height": 13,
-											"text": "+saveReport(ur: UserReport): Boolean",
+											"text": "+saveReport(ur: JSON): Boolean",
 											"horizontalAlignment": 0
 										},
 										{
@@ -58754,7 +58754,7 @@
 											"top": 299,
 											"width": 248.1806640625,
 											"height": 13,
-											"text": "+loadStatistics(): Array<JSON>",
+											"text": "+loadStatistics(): JSON",
 											"horizontalAlignment": 0
 										},
 										{
@@ -61170,7 +61170,7 @@
 											"font": "Arial;13;1",
 											"left": 709,
 											"top": 383,
-											"width": 63.2353515625,
+											"width": 76.578125,
 											"height": 13,
 											"text": "User"
 										},
@@ -61205,7 +61205,7 @@
 									"font": "Arial;13;0",
 									"left": 704,
 									"top": 376,
-									"width": 73.2353515625,
+									"width": 86.578125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFuvV27mgZjvKY="
@@ -61242,16 +61242,16 @@
 											"font": "Arial;13;0",
 											"left": 709,
 											"top": 406,
-											"width": 63.2353515625,
+											"width": 76.578125,
 											"height": 13,
-											"text": "-email",
+											"text": "-email: String",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 704,
 									"top": 401,
-									"width": 73.2353515625,
+									"width": 86.578125,
 									"height": 23
 								},
 								{
@@ -61266,7 +61266,7 @@
 									"font": "Arial;13;0",
 									"left": 704,
 									"top": 424,
-									"width": 73.2353515625,
+									"width": 86.578125,
 									"height": 10
 								},
 								{
@@ -61309,7 +61309,7 @@
 							"containerChangeable": true,
 							"left": 704,
 							"top": 376,
-							"width": 73.2353515625,
+							"width": 86.578125,
 							"height": 58,
 							"nameCompartment": {
 								"$ref": "AAAAAAFuvV27mgZiFL0="
@@ -62343,7 +62343,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFuvSIGViu2eek="
 											},
-											"type": "Array<UserReport>",
+											"type": "JSON",
 											"direction": "return"
 										},
 										{
@@ -62352,10 +62352,8 @@
 											"_parent": {
 												"$ref": "AAAAAAFuvSIGViu2eek="
 											},
-											"name": "u",
-											"type": {
-												"$ref": "AAAAAAFuvV27mAZfhOo="
-											}
+											"name": "user",
+											"type": "String"
 										}
 									]
 								},
@@ -62374,7 +62372,7 @@
 												"$ref": "AAAAAAFuvSKm9yvk9YA="
 											},
 											"name": "ur",
-											"type": "UserReport"
+											"type": "JSON"
 										},
 										{
 											"_type": "UMLParameter",
@@ -62401,7 +62399,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFuvSKvLCv5qh4="
 											},
-											"type": "Array<JSON>",
+											"type": "JSON",
 											"direction": "return"
 										}
 									]
@@ -62715,7 +62713,8 @@
 										"$ref": "AAAAAAFuvV27mAZfhOo="
 									},
 									"name": "email",
-									"visibility": "private"
+									"visibility": "private",
+									"type": "String"
 								}
 							]
 						}
