@@ -1,0 +1,31 @@
+//SafeStreets
+
+public interface AuthenticationInterface{
+boolean checkLoginUser(String email, String password);
+boolean checkSignupUser(String email)
+boolean checkLoginMunicipality(String )
+}
+public interface AuthenticationDBMS{
+  User getUser(String email);
+  boolean insertUser(String email, String password);
+  Municipality getMunicipality(String referenceCode);
+  boolean insertMunicipality(String referenceCode, String password);
+
+}
+public interface NotificationInterface{}
+public interface ReportsDBMS{}
+public interface InterventionsDBMS{}
+public interface DataInterface{}
+public interface WebAppInterface{}
+
+//Municipality
+public interface PushInterface{}
+public interface HTTPS{}
+public interface AccidentsAPIREST{}
+
+//External services
+public interface MapsAPI{}
+public interface APIREST{}
+
+//User
+public interface MobileAppInterface{}
