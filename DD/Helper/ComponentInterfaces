@@ -1,27 +1,63 @@
 //SafeStreets
 
 public interface AuthenticationInterface{
-boolean checkLoginUser(String email, String password);
-boolean checkSignupUser(String email)
-boolean checkLoginMunicipality(String )
+  boolean checkLoginUser(String email, String password);
+  boolean checkSignupUser(String email);
+  boolean checkLoginMunicipality(String referenceCode, String password);
 }
 public interface AuthenticationDBMS{
   User getUser(String email);
   boolean insertUser(String email, String password);
   Municipality getMunicipality(String referenceCode);
   boolean insertMunicipality(String referenceCode, String password);
+}
+public interface NotificationInterface{
+  String createNotification(UserReport userReport);
+  boolean sendNotification(String notification);
+}
+public interface ReportsDBMS{
+  //to retrieve User reports from Reports DB for the following purposes:
+  //Public Statistics, Detailed Statistics, My Reports, Possible Interventions(Data crossing), Ticket feedback.
+  List<UserReport> getUserReports(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
+  //to add a new User report to Reports DB
+  boolean insertUserReport(UserReport userReport);
+  boolean addFeedback(UserReport userReport);
+}
+public interface InterventionsDBMS{
+  //to retrieve latest Interventions from Interventions DB
+  JSONObject getInterventions(Timestamp time);
+  //to add the latest Interventions to Interventions DB
+  boolean insertInterventions(JSONObject interventions);
+  //to add new Accidents to Interventions DB
+  boolean insertNewAccidents(JSONObject accidents);
+  //to retrieve the quiered Accidents data from Interventions DB
+  JSONObject getAccidents(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
+}
+public interface DataInterface{
+  List<UserReport> getUserReports(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
+  
+  JSONObject getInterventions(Timestamp time);
+  boolean insertInterventions(JSONObject interventions);
+  JSONObject getAccidents(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
+  boolean insertNewAccidents(JSONObject accidents);
+  JSONObject
+}
+public interface WebAppInterface{}
+  UserReport
+//Municipality
+public interface PushInterface{
+  boolean sendNotification(String notification);
+}
+public interface HTTPS{
+  boolean sendInterventions(JSONObject interventions);
+  boolean sendUserReport(UserReport userReport);
+  boolean sendDetailedStatistics(JSONObject detailedS);
+}
+public interface AccidentsAPIREST{
+  //to retrieve latest Accidents from Municipality infrastructure
+  JSONObject getAccidentsFromMunicipality(Timestamp time);
 
 }
-public interface NotificationInterface{}
-public interface ReportsDBMS{}
-public interface InterventionsDBMS{}
-public interface DataInterface{}
-public interface WebAppInterface{}
-
-//Municipality
-public interface PushInterface{}
-public interface HTTPS{}
-public interface AccidentsAPIREST{}
 
 //External services
 public interface MapsAPI{}
