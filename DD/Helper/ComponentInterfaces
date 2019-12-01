@@ -1,14 +1,18 @@
 //AUTHENTICATION
 public interface AuthenticationInterface{
+
+  User getUser(String email);
+  Municipality getMunicipality(String referenceCode);
+  boolean insertUser(String email, String password);
+  boolean insertMunicipality(String referenceCode, String password);
   boolean checkLoginUser(String email, String password);
   boolean checkSignupUser(String email);
   boolean checkLoginMunicipality(String referenceCode, String password);
+
 }
 public interface AuthenticationDBMS{
-  User getUser(String email);
-  boolean insertUser(String email, String password);
-  Municipality getMunicipality(String referenceCode);
-  boolean insertMunicipality(String referenceCode, String password);
+  //SQLQuery is a classe that provides a textual representation of query SQL
+  //XMLObject performQuery(SQLQuery query);
 }
 
 //NOTIFICATION
@@ -16,30 +20,12 @@ public interface NotificationInterface{
   String createNotification(UserReport userReport);
   boolean sendNotification(String notification);
 }
-public interface PushInterface{
-  boolean sendNotification(String notification);
-}
 
 //DATA
 public interface DataInterface{
-  List<UserReport> getUserReports(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
-  JSONObject getInterventions(Timestamp time);
-  boolean insertInterventions(JSONObject interventions);
-  JSONObject getAccidents(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
-  boolean insertNewAccidents(JSONObject accidents);
-  JSONObject
-}
-//Reports
-public interface ReportsDBMS{
   //to retrieve User reports from Reports DB for the following purposes:
   //Public Statistics, Detailed Statistics, My Reports, Possible Interventions(Data crossing), Ticket feedback.
   List<UserReport> getUserReports(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
-  //to add a new User report to Reports DB
-  boolean insertUserReport(UserReport userReport);
-  boolean addFeedback(UserReport userReport);
-}
-//Interventions
-public interface InterventionsDBMS{
   //to retrieve latest Interventions from Interventions DB
   JSONObject getInterventions(Timestamp time);
   //to add the latest Interventions to Interventions DB
@@ -48,15 +34,22 @@ public interface InterventionsDBMS{
   boolean insertNewAccidents(JSONObject accidents);
   //to retrieve the quiered Accidents data from Interventions DB
   JSONObject getAccidents(String email, Timestamp time, String typeOfViolation, Position position, String licensePlate);
+  //to add a new User report to Reports DB
+  boolean insertUserReport(UserReport userReport);
+  boolean addFeedback(UserReport userReport);
+
 }
-public interface AccidentsAPIREST{
-  //to retrieve latest Accidents from Municipality infrastructure
-  JSONObject getAccidentsFromMunicipality(Timestamp time);
-}
+//Reports
+public interface ReportsDBMS{}
+//Interventions
+public interface InterventionsDBMS{}
 
 //Municipality
 public interface WebAppInterface{
-
+  boolean loginMunicipality(String referenceCode, String password);
+  boolean getReports();
+  boolean visualizeDetailedStatistics(Timestamp time, String typeOfViolation, Position position, String licensePlate);
+  boolean visualizePossibleInterventions(Timestamp time);
 }
 public interface HTTPS{
   boolean sendInterventions(JSONObject interventions);
@@ -66,13 +59,18 @@ public interface HTTPS{
 
 //User
 public interface MobileAppInterface{
+  boolean signUpUser(String email);
+  boolean loginUser(String email, String password);
+  boolean getMyReports(String email);
+  boolean sendUserReport(UserReport userReport);
+  //picture from MobileApplication
+  boolean validateReportPicture(JSONObject picture);
+  boolean visualizePublicStatistics(Timestamp time, String typeOfViolation, Position position);
 
 }
 
 //External services
-public interface MapsAPI{
-
-}
-public interface APIREST{
-
-}
+public interface MapsAPI{}
+public interface APIREST{}
+public interface AccidentsAPIREST{}
+public interface PushInterface{}
