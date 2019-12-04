@@ -4,6 +4,81 @@
 
 \chapter{Requirements Traceability}
 \thispagestyle{fancy}
-		
-		
+
+% TODO: Introduction
+
+
+\begin{itemize}
+	\item[R\subs{1}]At sign up, \ic{User} must provide email and password.
+	\item[R\subs{2}]At sign up, \ic{User} must accept \ic{Terms and conditions}, including the \ic{Privacy statement}.
+	\begin{description}
+	 \item[$\bullet$ Authentication Manager:] handles the registration process for each \ic{User}.
+	\end{description}
+
+	\item[R\subs{3}]Identify a \ic{User} by his/her \ic{User identifier}.
+	\item[R\subs{13}]Query SafeStreets Database for a \ic{User} by his/her \ic{User identifier}.
+	\item[R\subs{29}]Identify \ic{Municipality} by its \ic{Reference code}.
+	\begin{description}
+	\item[$\bullet$ Authentication Manager:] allows Registered Entities to be identified by their identifier and password that are stored in Authentication Database through Authentication DAO.
+	\end{description}
+
+	\item[R\subs{4}]Receive \ic{User picture}.
+	\item[R\subs{5}]Receive \ic{User} choice for the type of \ic{Traffic violation}.
+	\item[R\subs{6}]Receive \ic{User position}.
+	\item[R\subs{9}]Create \ic{User report}.
+	\item[R\subs{10}]Store \ic{User report} in SafeStreets Database.
+	\item[R\subs{14}]Retrieve specific \ic{User reports} by querying SafeStreets Database.
+	\item[R\subs{20}]Allow \ic{Users} to request all their \ic{User report} and the related \ic{Ticket feedback} stored in SafeStreets Database at any time.
+	\item[R\subs{21}]Send to a specific \ic{User} his/her stored \ic{User reports}.
+	\item[R\subs{22}]Send to a specific \ic{User} the \ic{Ticket feedback} related to his/her \ic{User report}.
+	\begin{description}
+	\item[$\bullet$ User reports Manager:] contains all the business logic in order to send and receive \ic{User report} data by Mobile App Interface, loading and storing them in Reports Database through Reports DAO.
+	\end{description}
+
+	\item[R\subs{7}]Send \ic{User picture} to the \ic{License plate recognition service}.
+	\item[R\subs{8}]Receive \ic{Recognized license plate} from the \ic{License plate recognition service}.
+	\item[R\subs{26}]Allow \ic{User} to re-take the \ic{User picture}.
+	\begin{description}
+	\item[$\bullet$ User reports Manager:] manages the transfer of \ic{User picture} to the third party service responsible of recognizing the License plate number and sends it back to the client.
+	\end{description}
+
+	\item[R\subs{12}]Store \ic{Ticket feedback} in SafeStreets Database.
+	\item[R\subs{25}]Receive \ic{Ticket feedback} from \ic{Municipality}.	
+	\begin{description}
+	\item[$\bullet$ User reports Manager:] handles the \ic{Ticket Feedback} issuing confirmation sent by the \ic{Municipality} and updates its status in Reports Database through Reports DAO.
+	\end{description}
+
+	\item[R\subs{11}]Send \ic{User report notification} to \ic{Municipality}.
+	\begin{description}
+	\item[$\bullet$ Notification Manager:] for each new violation reported by \ic{Users}, it is responsible of sending a notification to the concerned \ic{Municipality}. 
+	\end{description}
+
+	\item[R\subs{15}]Validate the data which constitutes the \ic{User report}.
+	\begin{description}
+	\item[$\bullet$ Authentication Manager:] guarantees a chain of custody matching \ic{User reports}' data and \ic{Users' identifiers} in a digital signature.
+	\end{description}
+
+	\item[R\subs{16}]Generate \ic{Possible interventions} crossing \ic{Municipality} \ic{Accidents} data with SafeStreets Database data.
+	\item[R\subs{17}]Store generated \ic{Possible interventions} for the \ic{Municipality}.
+	\begin{description}
+	\item[$\bullet$ User report Manager:] allows specific \ic{User reports'} information retrieval based on report position and timestamp.
+	\item[$\bullet$ Accidents Manager:] periodically, it retrieves latest accidents data from \ic{Municipality's} database, stores them in Accidents database and collects accidents basing on particular parameters.
+	\item[$\bullet$ Interventions Manager:] contains the logic able to cross \ic{User reports'} and \ic{Accidents'} data in order to generate \ic{Possible interventions} to suggest to \ic{Municipality}.
+	\end{description}
+	
+	\item[R\subs{18}]Allow \ic{Municipality} to set specific constraints to define \ic{Detailed statistics}.
+	\item[R\subs{19}]Send \ic{Detailed statistics} to the requesting \ic{Municipality}.
+	\item[R\subs{24}]Send \ic{Public statistics} to the requesting \ic{User}.
+	\item[R\subs{23}]Allow \ic{User} to choose among filters which define \ic{Public statistics}.
+	\begin{description}
+	\item[$\bullet$ Statistics Manager:] contains all the business logic in order to send \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters.
+	\end{description}
+	
+	\item[R\subs{27}]Request \ic{Accidents} data to \ic{Municipality}.
+	\item[R\subs{28}]Receive \ic{Accidents} data from \ic{Municipality}.
+		\begin{description}
+		\item[$\bullet$ Accidents Manager:] contains all the business logic in order to send and receive \ic{Accidents} data from \ic{Municipality} IT, loading and storing them in Accidents Database through Accidents DAO.
+	\end{description}
+
+\end{itemize}
 \end{document}
