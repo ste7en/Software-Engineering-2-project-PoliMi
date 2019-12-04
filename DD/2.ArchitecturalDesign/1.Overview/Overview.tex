@@ -3,6 +3,16 @@
 
 \section{Overview\label{sect:2.1}}
 
+%TODO: [Overview diagram]
+
+The figure above represents an high-level description of the main components which constitute the system-to-be. They are organized in a 4-layers architecture, in particular:
+\begin{description}
+	\item [Web Browser]: is the Presentation Layer for the \ic{Municipality} Web Browser, communicates with the Web Server;
+	\item [Mobile application]: is the Presentation Layer for the \ic{User} Mobile Application, communicates with the Web Server;
+	\item [Web Server]: represents the Service Layer, communicates with the \ic{Municipality} Web Browser and with the Mobile Application on one hand (i.e. the Presentation Layer) and with the components of the Application Server on the other (i.e. the Business Layer);
+	\item [Application Server]: represents the Business Layer of the system, communicates with the Web Server on one hand and with the Data Access Layer on the other; 
+	\item [Data Access Object and Database]: represent the Data Access Layer of the system, Database communicates with the Business Layer through the Data Access Object (DAO).
+\end{description}
 
 \newpage
 \end{document}
