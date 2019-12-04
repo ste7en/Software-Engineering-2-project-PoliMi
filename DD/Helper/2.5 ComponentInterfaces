@@ -1,0 +1,91 @@
+//Web server manages the HTTPS communications with MobileApplication and Browser
+//User
+public interface MobileAppInterface{} //HTTPS request
+//Municipality
+public interface WebAppInterface{} //HTTPS request
+
+//Interfaces between Web Server and Application
+public interface ReportsInterface{
+  //User
+  boolean getMyReports(String email);
+  boolean validateReportPicture(Picture picture); //picture from Mobile Application
+  boolean sendUserReport(UserReport userReport);
+  //Municipality
+  boolean getReports();
+  boolean sendFeedback(UserReport userReport);
+}
+public interface AuthenticationInterface{
+  boolean signUpUser(String email);
+  boolean loginUser(String email, String password);
+  boolean loginMunicipality(String referenceCode, String password);
+}
+public interface StatisticsInterface{
+  boolean visualizePublicStatistics(Date startDate, Date endDate, String typeOfViolation, Position position);
+  boolean visualizeDetailedStatistics(Date startDate, Date endDate, String typeOfViolation, Position position, String licensePlateNumber);
+}
+public interface Interventions{
+  boolean visualizePossibleInterventions(Date time);
+}
+
+//Interfaces within Application
+public interface StatisticsDataInterface{
+  Map<> collectAsPublicStatistics(); //aggregates User reports data
+  Map<> collectAsDetailedStatistics(); //aggregates User reports data
+}
+public interface ReportsInterventionsInterface{
+  List<> getUserReports();
+}
+public interface AccidentsInterventionsInterface{
+  List<> getAccidents();
+}
+public interface NotificationInterface{
+  boolean createNotification(UserReport userReport);
+}
+
+//Interfaces between Application and DataAccessObject
+public interface AuthenticationDataInterface{
+  User getUser(String email);
+  Municipality getMunicipality(String referenceCode);
+  boolean insertUser(String email, String password);
+  boolean insertMunicipality(String referenceCode, String password);
+  boolean checkLoginUser(String email, String password);
+  boolean checkSignupUser(String email);
+  boolean checkLoginMunicipality(String referenceCode, String password);
+
+}
+public interface ReportsDataInterface{
+  boolean insertUserReport(UserReport userReport);
+  //to retrieve User reports from Reports DB for My Reports(User request) and Ticket feedback(Municipality request)
+  List<> getUserReports(String email, Date startDate, Date endDate, String typeOfViolation, Position position, String licensePlate);
+}
+public interface InterventionsDataInterface{
+  //to retrieve latest Interventions from Interventions DB
+  Map<> getInterventions(Date time);
+  //to add the latest Interventions to Interventions DB
+  boolean insertInterventions(Map<> interventions);
+}
+public interface AccidentsDataInterface{
+  //to add new Accidents to Accidents DB
+  boolean insertNewAccidents(Map<> accidents);
+  //to retrieve the quiered Accidents data from Accidents DB
+  Map<> getAccidents(Date startDate, Date endDate, Position position);
+}
+
+//Interfaces between DataAccessObject and Database
+//DataAccessObjects manage the communications with Databases throught JDBC APIs
+public interface AuthenticationJDBC{}
+public interface ReportsJDBC{}
+public interface InterventionsJDBC{}
+public interface AccidentsJDBC{}
+
+//Interfaces with External services
+public interface NotificationSenderInterface{
+  boolean sendNotification(UserReport userReport);
+}
+public interface AccidentsAPIREST{
+  Map<> getAccidents(Date time);
+}
+public interface LicensePlateAPIREST{
+  String getRecognizedLicensePlate(Picture picture);
+}
+public interface MapsAPI{} //HTTPS request
