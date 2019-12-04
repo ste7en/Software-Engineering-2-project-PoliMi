@@ -33,13 +33,10 @@ public interface StatisticsDataInterface{
   Map<> collectAsDetailedStatistics(); //aggregates User reports data
 }
 public interface ReportsInterventionsInterface{
-  List<> getUserReports();
+  List<> getUserReports(Position position, Date time);
 }
 public interface AccidentsInterventionsInterface{
   List<> getAccidents();
-}
-public interface NotificationInterface{
-  boolean createNotification(UserReport userReport);
 }
 
 //Interfaces between Application and DataAccessObject
@@ -79,7 +76,7 @@ public interface InterventionsJDBC{}
 public interface AccidentsJDBC{}
 
 //Interfaces with External services
-public interface NotificationSenderInterface{
+public interface NotificationInterface{
   boolean sendNotification(UserReport userReport);
 }
 public interface AccidentsAPIREST{
