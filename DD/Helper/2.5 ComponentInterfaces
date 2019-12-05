@@ -35,14 +35,14 @@ public interface InterventionsInterface{
   boolean visualizePossibleInterventions(Date time);
 }
 public interface StatisticsDataInterface{
-  Map<> collectAsPublicStatistics(); //aggregates User reports data
-  Map<> collectAsDetailedStatistics(); //aggregates User reports data
+  Map<String,String> collectAsPublicStatistics(); //aggregates User reports data
+  Map<String,String> collectAsDetailedStatistics(); //aggregates User reports data
 }
 public interface ReportsInterventionsInterface{
-  List<> getUserReports(Position position, Date time);
+  List<UserReport> getUserReports(Position position, Date time);
 }
 public interface AccidentsInterventionsInterface{
-  List<> getAccidents();
+  List<Map<String,String>> getAccidents();
 }
 public interface NotificationInterface{
   boolean createNotification(UserReport userReport);
@@ -64,19 +64,19 @@ public interface AuthenticationDataInterface{
 public interface ReportsDataInterface{
   boolean insertUserReport(UserReport userReport);
   //to retrieve User reports from Reports DB for My Reports(User request) and Ticket feedback(Municipality request)
-  List<> getUserReports(String email, Date startDate, Date endDate, String typeOfViolation, Position position, String licensePlate);
+  List<UserReport> getUserReports(String email, Date startDate, Date endDate, String typeOfViolation, Position position, String licensePlate);
 }
 public interface InterventionsDataInterface{
   //to retrieve latest Interventions from Interventions DB
-  Map<> getInterventions(Date time);
+  List<Map<String,String>> getInterventions(Date time);
   //to add the latest Interventions to Interventions DB
-  boolean insertInterventions(Map<> interventions);
+  boolean insertInterventions(List<Map<String,String>> interventions);
 }
 public interface AccidentsDataInterface{
   //to add new Accidents to Accidents DB
-  boolean insertNewAccidents(Map<> accidents);
+  boolean insertNewAccidents(List<Map<String,String>> accidents);
   //to retrieve the quiered Accidents data from Accidents DB
-  Map<> getAccidents(Date startDate, Date endDate, Position position);
+  List<Map<String,String>> getAccidents(Date startDate, Date endDate, Position position);
 }
 
 //---
@@ -95,7 +95,7 @@ public interface NotificationForwardInterface{
   boolean sendNotification(UserReport userReport);
 }
 public interface AccidentsAPIREST{
-  Map<> getAccidents(Date time);
+  List<Map<String,String>> getAccidents(Date time);
 }
 public interface LicensePlateAPIREST{
   String getRecognizedLicensePlate(Picture picture);
