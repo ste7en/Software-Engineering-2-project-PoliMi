@@ -41,23 +41,29 @@ The following table represents the main features of the system-to-be, along with
 
 \subsection{Elements to be Integrated\label{5.3.1}}
 
-\textbf{Integration of the internal components of the Application Server} \\
+In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead. \\
+
+\textbf{Integration of the internal components of the Business logic tier} \\
+\\ Each internal component of the Application Server, that cointains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.  \\
 
 \image{3.5cm}{Images/Chap5/CompIntApplicationServer1.png}{Statistics Manager Integration}{}
-\image{5cm}{Images/Chap5/CompIntApplicationServer2.png}{Interventions Manager Integration}{}
+\image{6cm}{Images/Chap5/CompIntApplicationServer2.png}{Interventions Manager Integration}{}
 
-\textbf{Integration of the Presentation tier with Web tier} \\
+\textbf{Integration with the Web tier} \\
+\\ The following diagrams represent the integration between the Presentation tier and the Web tier and then between the Web Server component and the Router component. \\
 
-\image{4cm}{Images/Chap5/CompIntFrontendWebServer.png}{Web Server Integration}{}
-\image{3cm}{Images/Chap5/CompIntWebServerRouter.png}{Router Integration}{}
+\image{5cm}{Images/Chap5/CompIntFrontendWebServer.png}{Web Server Integration}{}
+\image{4cm}{Images/Chap5/CompIntWebServerRouter.png}{Router Integration}{}
 
 \textbf{Integration with the external services} \\
+\\ The following diagrams represent the integration of the components that are part of the Presentation tier and the Business logic tier with some External Service. \\
 
 \image{4cm}{Images/Chap5/CompIntFrontendExtServ.png}{Google Maps Integration}{}
-\image{4cm}{Images/Chap5/CompIntAppServerExtService1.png}{Municipality IT Integration}{}
-\image{3cm}{Images/Chap5/CompIntAppServerExtService2.png}{License Plate Recognize Service Integration}{} 
+\image{5cm}{Images/Chap5/CompIntAppServerExtService1.png}{Municipality IT Integration}{}
+\image{4cm}{Images/Chap5/CompIntAppServerExtService2.png}{License Plate Recognize Service Integration}{} 
 
-\textbf{Integration with the Data Layer} \\
+\textbf{Integration with the Database tier} \\
+\\ The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows. \\
 \image{8cm}{Images/Chap5/CompIntAppServerDataLayer.png}{DataAccessObjects - Database Integration}{}
 
 
