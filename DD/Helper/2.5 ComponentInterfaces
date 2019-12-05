@@ -4,7 +4,15 @@ public interface MobileAppInterface{} //HTTPS request
 //Municipality
 public interface WebAppInterface{} //HTTPS request
 
-//Interfaces between Web Server and Application
+//---
+
+//Interface between Web Server and Application
+//It contains the methods to forward the requests coming from the Web Application to the Router in the Application
+public interface ForwardInterface{}
+
+//---
+
+//Interfaces within Application
 public interface ReportsInterface{
   //User
   boolean getMyReports(String email);
@@ -23,11 +31,9 @@ public interface StatisticsInterface{
   boolean visualizePublicStatistics(Date startDate, Date endDate, String typeOfViolation, Position position);
   boolean visualizeDetailedStatistics(Date startDate, Date endDate, String typeOfViolation, Position position, String licensePlateNumber);
 }
-public interface Interventions{
+public interface InterventionsInterface{
   boolean visualizePossibleInterventions(Date time);
 }
-
-//Interfaces within Application
 public interface StatisticsDataInterface{
   Map<> collectAsPublicStatistics(); //aggregates User reports data
   Map<> collectAsDetailedStatistics(); //aggregates User reports data
@@ -38,6 +44,11 @@ public interface ReportsInterventionsInterface{
 public interface AccidentsInterventionsInterface{
   List<> getAccidents();
 }
+public interface NotificationInterface{
+  boolean createNotification(UserReport userReport);
+}
+
+//---
 
 //Interfaces between Application and DataAccessObject
 public interface AuthenticationDataInterface{
@@ -68,6 +79,8 @@ public interface AccidentsDataInterface{
   Map<> getAccidents(Date startDate, Date endDate, Position position);
 }
 
+//---
+
 //Interfaces between DataAccessObject and Database
 //DataAccessObjects manage the communications with Databases throught JDBC APIs
 public interface AuthenticationJDBC{}
@@ -75,8 +88,10 @@ public interface ReportsJDBC{}
 public interface InterventionsJDBC{}
 public interface AccidentsJDBC{}
 
+//---
+
 //Interfaces with External services
-public interface NotificationInterface{
+public interface NotificationForwardInterface{
   boolean sendNotification(UserReport userReport);
 }
 public interface AccidentsAPIREST{
