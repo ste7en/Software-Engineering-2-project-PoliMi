@@ -5,6 +5,8 @@
 \chapter{Implementation, Integration and Test Plan}
 \thispagestyle{fancy}
 
+\section{Development Process\label{5.1}}
+
 The following table represents the main features of the system-to-be, along with the relative importance that it has for the customer and the difficulty of implementing it. Of course, the Implementation, Integration and Testing process will be based on this evaluation.
 
 \begin{center}
@@ -23,23 +25,80 @@ The following table represents the main features of the system-to-be, along with
 	\end{longtable}
 \end{center}
 
-\section{Development Process\label{5.1}}
 
-%---
 
 \section{Implementation\label{5.2}}
 
 \subsection{Implementation Plan\label{5.2.1}}
+The following list includes all the components that must be implemented. The list takes into account the separation between the 4 tiers and the external systems considered:
+\begin{itemize}
+	\item Presentation tier
+	\begin{itemize}
+		\item Mobile Application
+		\item Browser
+	\end{itemize}
+\item Web tier
+	\begin{itemize}
+		\item Apache Web Server
+	\end{itemize}
+\item Business Logic tier
+	\begin{itemize}
+		\item Router
+		\item Authentication Manager
+		\item Statistics
+		\item User reports Manager
+		\item Interventions Manager
+		\item Accidents Manager
+		\item Notification Manager
+	\end{itemize}
+\item Database tier
+	\begin{itemize}
+		\item AuthenticationDAO
+		\item ReportsDAO
+		\item InterventionsDAO
+		\item AccdentsDAO
+		\item Authentcation DB
+		\item Reports DB
+		\item Interventions DB
+		\item Accidents DB
+	\end{itemize}
+\item External Services
+	\begin{itemize}
+		\item Google Maps
+		\item License Plate Recognition Service
+		\item Municipality IT
+	\end{itemize}
+	
+\end{itemize}
+List of all the components to be implemented (by us) in order of importance (for the system: first those which are needed by other components)
 
 
 \subsection{Implementation Choices\label{5.2.2}}
 
+\subsubsection{Mobile Application}
+The Mobile Application must be implemented in two different architecture respecting native languages, Swift 4 for iOS application and Java for Android ones. The communication with the device must be done using the default frameworks of the respective system, moreover the communication with the Apache Web Server must be performed with HTTPS protocol.
 
-%---
+\subsubsection{Browser}
+The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed with HTTSP protocol, while the communication with Google Maps service must be performed through Maps API.
+
+\subsubsection{Web Server}
+The implementation of this tier is done with Java Enterprise Edition 7 (JEE) using an Apache HTTPS Server. A TCP/IP protocol is used to interface with the J2EE application server, an HTTPS protocol to interface with the load balancer (Section\ref{sect:2.3}). 
+
+\subsubsection{Application Server}
+The Application Server implementation' is done with Red Hat JBoss EAP using a J2EE application server. A TCP/IP protocol is used to interface with the Database Server and RESTful APIs to interface with the External Services, respectively \ic{Municipality} IT and \ic{License plate recognition service} .
+
+\subsubsection{DAO and Database}
+The choices that have been taken for the Database are PostgreSQL as relational DBMS. 
 
 \section{Integration\label{5.3}}
 
 \subsection{Elements to be Integrated\label{5.3.1}}
+
+
+
+\subsection{Integration Sequence\label{5.3.2}}
+Table [Subsystem | Component | Integration with]
+(subsystems are 2 if components to be integrated belong to different layers, i.e. the subsystems themselves)
 
 In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead. \\
 
@@ -66,19 +125,15 @@ In this Section the integration flow is shown. Each component is integrated in t
 \\ The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows. \\
 \image{8cm}{Images/Chap5/CompIntAppServerDataLayer.png}{DataAccessObjects - Database Integration}{}
 
-
-\subsection{Integration Sequence\label{5.3.2}}
-
-
 %---
 
 \section{Test Plan\label{5.4}}
 
 \subsection{Unit Testing\label{5.4.1}}
+All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90% (only the View part could not respect the line covarge constraint).
 
 
 \subsection{Integration Testing\label{5.4.2}}
 
-%---
-
+The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning. The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested succesfully. In this way it should be easier to localize any eventual faults and no time is wasted waiting for all modules to be developed.
 \end{document}
