@@ -1,0 +1,16 @@
+\documentclass[../../../DD.tex]{subfiles}
+\begin{document}
+	
+	\subsection{Model-View-Controller\label{subsect:2.6.3}}
+	The chosen design pattern for mobile and web applications' implementations is the Model-View-Controller (MVC), which separates an application into three interconnected elements, each one realizing a functionality. \\
+
+	While the Controller updates the View, the Model represents a thin data manager, where a small cache of data previously downloaded from the server are temporary stored, manipulated and updated by the Controller. \\
+	
+	This pattern, from a Software Engineering point of view, guarantees the reusability of code and parallel development.
+	
+	\image{15 cm}{Images/Chap2/ClientClassDiagram.png}{Client Applications Class Diagram}{ClientClassDiagram}
+	
+	The picture above models the class diagram of clients' applications, with a Controller that communicates to the Web Server through an API Manager class, responsible of handling asynchronous connections and data decoding.
+	
+	\newpage
+\end{document}
