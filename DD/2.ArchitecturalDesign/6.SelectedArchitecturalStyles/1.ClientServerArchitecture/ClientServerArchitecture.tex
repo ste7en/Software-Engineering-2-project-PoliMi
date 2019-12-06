@@ -1,0 +1,13 @@
+\documentclass[../../../DD.tex]{subfiles}
+\begin{document}
+	
+	\subsection*{4-Tier Architecture\label{subsect:2.6.1}}
+	For the system to be developed and its infrastructure the chosen architecture is the Four-Tier one. As can also be found in the Deployment Diagram in \ref{sect:2.3} four main components are needed by the System: one or more clients on different devices, a web server that will communicate with the application server and a database, each one realizing a different layer. \\
+	The Four‑Tier model is architected to create a foundation for excellent performance, device‑tailored experiences, and allows for integration of both internal services and applications as well as third‑party services and APIs. Moreover, all parts of the system can be upgraded independently and even more scalability can be obtained through replication. \\
+	
+	The chosen pattern is the remote presentation, where clients don't provide any application logic but the GUI, with which \ic{Users} and \ic{Municipalities} interact with the application server. \\
+	For example, a \ic{User} can send a \ic{User report} taking a \ic{User picture} that will, then, be sent to the Application Server for its validation and license plate number recognition. \\
+	
+	The Web Server represents the Service Layer, communicating with the Presentation Layer handled by clients' mobile or web applications. At the system's core is the Application Server, which implements the Business Logic Layer through a JavaEE application. The Database, instead, represents the Data Access Layer which will be queried by the Business Logic one. It is the place where all information are stored and there is no database on clients' side; consequently, all data will be downloaded through the network from the server.
+	
+\end{document}
