@@ -32,14 +32,14 @@ In the provided mapping, the "Router" component is not mentioned for simplicity 
 	\item[R\subs{21}]Send to a specific \ic{User} his/her stored \ic{User reports}.
 	\item[R\subs{22}]Send to a specific \ic{User} the \ic{Ticket feedback} related to his/her \ic{User report}.
 	\begin{description}
-	\item[$\bullet$ User reports Manager:] contains all the business logic in order to send and receive \ic{User report} data by Mobile App Interface, loading and storing them in Reports Database through Reports DAO.
+	\item[$\bullet$ User reports Manager:] contains all the business logic in order to send and receive \ic{User report} data, loading and storing them in Reports Database through Reports DAO.
 	\end{description}
 
 	\item[R\subs{7}]Send \ic{User picture} to the \ic{License plate recognition service}.
 	\item[R\subs{8}]Receive \ic{Recognized license plate} from the \ic{License plate recognition service}.
 	\item[R\subs{26}]Allow \ic{User} to re-take the \ic{User picture}.
 	\begin{description}
-	\item[$\bullet$ User reports Manager:] manages the transfer of \ic{User picture} to the third party service responsible of recognizing the License plate number and sends it back to the client.
+	\item[$\bullet$ User reports Manager:] manages the transfer of \ic{User picture} to the \ic{License plate recognition service}, eventually sending back to the client the recognized license plate.
 	\end{description}
 
 	\item[R\subs{12}]Store \ic{Ticket feedback} in SafeStreets Database.
@@ -71,13 +71,13 @@ In the provided mapping, the "Router" component is not mentioned for simplicity 
 	\item[R\subs{24}]Send \ic{Public statistics} to the requesting \ic{User}.
 	\item[R\subs{23}]Allow \ic{User} to choose among filters which define \ic{Public statistics}.
 	\begin{description}
-	\item[$\bullet$ Statistics Manager:] contains all the business logic in order to send \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters.
+	\item[$\bullet$ Statistics Manager:] contains all the business logic in order to aggregate \ic{User reports} data and generate \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters.
 	\end{description}
 	
 	\item[R\subs{27}]Request \ic{Accidents} data to \ic{Municipality}.
 	\item[R\subs{28}]Receive \ic{Accidents} data from \ic{Municipality}.
-		\begin{description}
-		\item[$\bullet$ Accidents Manager:] contains all the business logic in order to send and receive \ic{Accidents} data from \ic{Municipality} IT, loading and storing them in Accidents Database through Accidents DAO.
+	\begin{description}
+	\item[$\bullet$ Accidents Manager:] contains all the business logic in order to send and receive \ic{Accidents} data from \ic{Municipality} IT, loading and storing them in Accidents Database through Accidents DAO.
 	\end{description}
 
 \end{itemize}

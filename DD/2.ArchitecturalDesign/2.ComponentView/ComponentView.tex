@@ -2,8 +2,54 @@
 \begin{document}
 
 \section{Component View\label{sect:2.2}}
+ In this section the system is presented in terms of its components with the help of a Component Diagram, then the functionalities of the components themselves are exploited and detailed.\\
 
+The color in the background of the components represent the tier they belong to, in particular the Presentation tier is represented in orange, the Service tier is in green, the Business logic tier is in blue, the Data access tier is in violet and the external services and infrastructures are in yellow.
 
 \image{20 cm}{Images/Chap2/ComponentDiagram.png}{SafeStreets Component Diagram}{ComponentDiagram}
+	
+\subsection{Presentation tier\label{sect:2.2.1}}
+	\begin{description}
+	\item[Mobile Application]: must communicate with the Apache Web Server through HTTP protocol (HTTPS connection); the Application UI must be designed user friendly and it has to follow the guidelines provided by the Android and iOS producer. The application itself must manage the GPS connection of the \ic{User}'s device, keep track of the locations data and provide all the data (both provided by the \ic{User} and collected as metadata) to the Apache Web Server.
+	\end{description}
+	
+\subsection{Service tier\label{sect:2.2.2}}
+	\begin{description}
+	\item[Apache Web Server]: must communicate with the \ic{User}'s Mobile Application and the \ic{Municipality} Browser through HTTP protocol (HTTPS connection); its primary function is to store, process and deliver web pages to requesting clients.
+	\end{description}
+	
+\subsection{Business logic tier\label{sect:2.2.3}}
+	\begin{description}
+	\item[Router]: communicates with the Apache Web Server through TCP/IP protocol; its function is to forward requests and data coming from the Apache Web Server to the right component in the Application Server. For semplicity reasons, in this document the Router component is often not mentioned, although its role is crucial to the proper functioning of the whole system;
+	 
+	\item[Authentication Manager]: handles the registration process for each \ic{User}
+	allows Registered Entities to be identified by their identifier (the email for the \ic{User} and the \ic{Reference code} for the \ic{Municipality}) and password that are stored in Authentication Database through Authentication DAO. Moreover, it guarantees a chain of custody matching \ic{User reports}' data and \ic{Users' identifiers} in a digital signature;
+	
+	\item[Statistics Manager]: contains all the business logic in order to aggregate \ic{User reports} data and generate \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters;
+	
+	\item[User reports Manager]: contains all the business logic in order to send and receive \ic{User report} data, loading and storing them in Reports Database through Reports DAO and handles the \ic{Ticket Feedback} issuing confirmation sent by the \ic{Municipality}, updating its status. Additionally, it manages the transfer of \ic{User picture} to the \ic{License plate recognition service}, eventually sending back to the client the recognized license plate, and allows specific \ic{User reports'} information retrieval based on particular parameters;
+	
+	\item[Interventions Manager]: contains the logic able to cross \ic{User reports'} and \ic{Accidents'} data in order to generate \ic{Possible interventions} to suggest to \ic{Municipality};
+	
+	\item[Accidents Manager]: contains all the business logic in order to send and receive periodically \ic{Accidents} data from \ic{Municipality} IT, loading and storing them in Accidents Database through Accidents DAO. It also collects Accidents data stored in Accidents database basing on particular parameters;
+	
+	\item[Notification Manager]: for each new violation reported by \ic{Users}, it is responsible of sending a notification to the concerned \ic{Municipality}.
+	\end{description}
+
+\subsection{Data access tier\label{sect:2.2.4}}
+	\begin{description}
+	\item[Authentication, Reports, Accidents and Interventions DAO]: the details about the Data Access Objects are shown in subsection \ref{2.6.4};
+	\item[Authentication, Reports, Accidents and Interventions Database]: the details about the Relational Databases are presented in subsection \ref{2.7.3}.
+	\end{description}
+	
+\subsection{External services and infrastructures\label{sect:2.2.5}}
+	\begin{description}
+	\item[Google Maps]: communicates with the Browser in order to provide the maps visualization service, through APIs which guarantee also the integration with the service itself;
+	
+	\item[Municipality IT]: communicates with the Application Server through RESTful APIs, both to receive notifications about new \ic{User reports} (in particular from the Notification Manager) and to provide Accidents data from its own database (in particular answering the request of Accidents manager);
+	
+	\item[License plate recognition service]: communicates with the Application Server (in particular with the User reports manager) through RESTful APIs, to receive a \ic{User picture} and send back a text representing the license plate recognized in the picture (if one is recognized). 
+	\end{description}
+
 \newpage
 \end{document}
