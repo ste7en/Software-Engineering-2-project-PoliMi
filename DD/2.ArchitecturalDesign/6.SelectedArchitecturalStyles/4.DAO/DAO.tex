@@ -2,5 +2,6 @@
 \begin{document}
 	
 	\subsection{Data Access Object\label{subsect:2.6.4}}
+	We decided to use the Data Access Object (DAO) architectural pattern in order to separate the Business logic tier services from the Database. The DAO implements the access mechanism required to deal with the data source, which in our case is a RDBMS (Relational DBMS): the Business logic tier uses the interface provided by the DAO, which aims to hide completely the details about the interaction with the data source and this happens because the DAO works as an adapter between the Business logic tier and the Database, as it doesn't change the provided interface if the data source implementation changes.
 	
 \end{document}
