@@ -1,0 +1,11 @@
+\documentclass[../../../DD.tex]{subfiles}
+\begin{document}
+	
+	\subsection{Thin Client\label{subsect:2.6.2}}
+	The decision to adopt the thin client architecture has been taken for different purposes. \\
+	First of all, if a logic component changes, the application won't need to be updated but only the server. This also allows the data processing to be only server side, without impacting client devices' performances. \\
+	
+	Isolating the user interface from the three tiers behind it in this way gives frontend and user‑experience designers much more control without disrupting backend processes or engineering. Similarly, it leaves backend designers free to adopt the best technology for their tier as long as the established protocols and encoding for information delivery to the client tier are maintained.
+	
+	The communication between each thin client and the server happens through HTTP protocol, which carries REST requests and responses formatted as JSON in their payloads.
+\end{document}
