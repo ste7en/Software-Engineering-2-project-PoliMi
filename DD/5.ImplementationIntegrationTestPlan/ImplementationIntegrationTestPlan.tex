@@ -30,47 +30,18 @@ The following table represents the main features of the system-to-be, along with
 \section{Implementation\label{5.2}}
 
 \subsection{Implementation Plan\label{5.2.1}}
-The following list includes all the components that must be implemented. The list takes into account the separation between the 4 tiers and the external systems considered:
-\begin{itemize}
-	\item Presentation tier
-	\begin{itemize}
-		\item Mobile Application
-		\item Browser
-	\end{itemize}
-\item Web tier
-	\begin{itemize}
-		\item Apache Web Server
-	\end{itemize}
-\item Business Logic tier
-	\begin{itemize}
-		\item Router
-		\item Authentication Manager
-		\item Statistics
-		\item User reports Manager
-		\item Interventions Manager
-		\item Accidents Manager
-		\item Notification Manager
-	\end{itemize}
-\item Database tier
-	\begin{itemize}
-		\item AuthenticationDAO
-		\item ReportsDAO
-		\item InterventionsDAO
-		\item AccdentsDAO
-		\item Authentcation DB
-		\item Reports DB
-		\item Interventions DB
-		\item Accidents DB
-	\end{itemize}
-\item External Services
-	\begin{itemize}
-		\item Google Maps
-		\item License Plate Recognition Service
-		\item Municipality IT
-	\end{itemize}
+This subsection shows the list of the Application Server components and reports and explains the order of their implementation based on what is described in the previous table (Section \ref{sect:5.1}). 
+
+\begin{description}
+	\item[User reports Manager]: it is the first component to be implemented as it has an high importance for the customer, it has an high difficult of implementation and will be used by many other components;
+	\item[Accidents Manager]: it follows the implementation of the User report Manager component, since it is used by the Interventions Manager component to generate \ic{Possible Interventions} (so it has to be implemented before that), but the correlated feature has a lower importance for the customer than the User report management;
+	\item[Interventions Manager]: it should be implemented after the User report Manager component and the Accidents Manager because it uses them in order to generate \ic{Possible Interventions};
+	\item[Statistics Manager]: it could be implemented in parallel with Accidents Manager, after User report Manager, as it uses this one to generate both \ic{Public Statistics} and \ic{Detailed Statistics}. Anyway, it is preferable do it after Accidents Manager due to its lower importance;
+	\item[Notification Manager]: it could be implemented in parallel with Accidents Manager and Statistics Manager, after User report Manager, but it is done immediately after User report Manager as it is part of the same feature.
+	\item[Authentication Manager]: it follows the implementation of User report Manager and should be built in parellel with Notification Manager due to the fact that is used to accomplish the "\ic{User report} generation" feature (digital signature), despite it also manages the "Sign up and login" feature which has the lowest importance;
+	\item[Router]: it is the last component that has to be implemented because it provides the communications redirection with the other components.
 	
-\end{itemize}
-List of all the components to be implemented (by us) in order of importance (for the system: first those which are needed by other components)
+\end{description}
 
 
 \subsection{Implementation Choices\label{5.2.2}}
@@ -82,7 +53,7 @@ The Mobile Application must be implemented in two different architecture respect
 The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed with HTTSP protocol, while the communication with Google Maps service must be performed through Maps API.
 
 \subsubsection{Web Server}
-The implementation of this tier is done with Java Enterprise Edition 7 (JEE) using an Apache HTTPS Server. A TCP/IP protocol is used to interface with the J2EE application server, an HTTPS protocol to interface with the load balancer (Section\ref{sect:2.3}). 
+The implementation of this tier is done with Java Enterprise Edition 7 (JEE) using an Apache HTTPS Server. A TCP/IP protocol is used to interface with the J2EE application server, an HTTPS protocol to interface with the load balancer (Section \ref{sect:2.3}). 
 
 \subsubsection{Application Server}
 The Application Server implementation' is done with Red Hat JBoss EAP using a J2EE application server. A TCP/IP protocol is used to interface with the Database Server and RESTful APIs to interface with the External Services, respectively \ic{Municipality} IT and \ic{License plate recognition service} .
@@ -97,32 +68,29 @@ The choices that have been taken for the Database are PostgreSQL as relational D
 
 
 \subsection{Integration Sequence\label{5.3.2}}
-Table [Subsystem | Component | Integration with]
-(subsystems are 2 if components to be integrated belong to different layers, i.e. the subsystems themselves)
+In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead.
 
-In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead. \\
-
-\textbf{Integration of the internal components of the Business logic tier} \\
-\\ Each internal component of the Application Server, that cointains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.  \\
+\subsection{Integration of the internal components of the Business logic tier}
+Each internal component of the Application Server, that cointains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.
 
 \image{3.5cm}{Images/Chap5/CompIntApplicationServer1.png}{Statistics Manager Integration}{}
 \image{6cm}{Images/Chap5/CompIntApplicationServer2.png}{Interventions Manager Integration}{}
 
-\textbf{Integration with the Web tier} \\
-\\ The following diagrams represent the integration between the Presentation tier and the Web tier and then between the Web Server component and the Router component. \\
+\subsection{Integration with the Web tier}
+The following diagrams represent the integration between the Presentation tier and the Web tier and then between the Web Server component and the Router component.
 
 \image{5cm}{Images/Chap5/CompIntFrontendWebServer.png}{Web Server Integration}{}
 \image{4cm}{Images/Chap5/CompIntWebServerRouter.png}{Router Integration}{}
 
-\textbf{Integration with the external services} \\
-\\ The following diagrams represent the integration of the components that are part of the Presentation tier and the Business logic tier with some External Service. \\
+\subsection{Integration with the external services}
+The following diagrams represent the integration of the components that are part of the Presentation tier and the Business logic tier with some External Service.
 
 \image{4cm}{Images/Chap5/CompIntFrontendExtServ.png}{Google Maps Integration}{}
 \image{5cm}{Images/Chap5/CompIntAppServerExtService1.png}{Municipality IT Integration}{}
 \image{4cm}{Images/Chap5/CompIntAppServerExtService2.png}{License Plate Recognize Service Integration}{} 
 
-\textbf{Integration with the Database tier} \\
-\\ The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows. \\
+\subsection{Integration with the Database tier}
+The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows.
 \image{8cm}{Images/Chap5/CompIntAppServerDataLayer.png}{DataAccessObjects - Database Integration}{}
 
 %---
@@ -130,10 +98,10 @@ In this Section the integration flow is shown. Each component is integrated in t
 \section{Test Plan\label{5.4}}
 
 \subsection{Unit Testing\label{5.4.1}}
-All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90% (only the View part could not respect the line covarge constraint).
+All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90\% (only the View part could not respect the line covarge constraint).
 
 
 \subsection{Integration Testing\label{5.4.2}}
 
-The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning. The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested succesfully. In this way it should be easier to localize any eventual faults and no time is wasted waiting for all modules to be developed.
+The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning. The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested succesfully. In this way it should be easier to localize any eventual fault and no time is wasted waiting for all modules to be developed.
 \end{document}
