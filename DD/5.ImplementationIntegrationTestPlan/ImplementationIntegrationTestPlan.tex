@@ -53,13 +53,17 @@ The Mobile Application must be implemented in two different architecture respect
 The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed with HTTSP protocol, while the communication with Google Maps service must be performed through Maps API.
 
 \subsubsection{Web Server}
+<<<<<<< HEAD
 The implementation of this tier is done with Java Enterprise Edition 7 (JEE) using an Apache HTTPS Server. A TCP/IP protocol is used to interface with the J2EE application server, an HTTPS protocol to interface with the load balancer (Section \ref{sect:2.3}). 
+=======
+The implementation of this tier is realized through an Apache Web Server 2.4.41. A TCP/IP protocol is used to interface with the J2EE application server and the HTTPS protocol to interface with the clients and the load balancer (Section\ref{sect:2.3}). 
+>>>>>>> master
 
 \subsubsection{Application Server}
 The Application Server implementation' is done with Red Hat JBoss EAP using a J2EE application server. A TCP/IP protocol is used to interface with the Database Server and RESTful APIs to interface with the External Services, respectively \ic{Municipality} IT and \ic{License plate recognition service} .
 
-\subsubsection{DAO and Database}
-The choices that have been taken for the Database are PostgreSQL as relational DBMS. 
+\subsubsection{Database}
+The choice that has been taken for the Database is PostgreSQL as relational DBMS, already previously described and motivated in Section \ref{2.7.3}.
 
 \section{Integration\label{5.3}}
 
