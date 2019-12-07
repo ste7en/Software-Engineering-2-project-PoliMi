@@ -4,12 +4,14 @@
 
 \section{Component interfaces\label{sect:2.5}}
 
-This section shows the interfaces belonging to the system. We focused mainly on the internal interfaces of the Application Server and on those which are external but related to the Application Server itself.
-Furthermore, the Forward Interface between the Web Server and the Router is reported without any method for semplicity reasons, as it contains all the methods belonging to the Interfaces between the Router component itself and the other components of the Application Server.\\
-Further details are mentioned in the following commented code lines.\\
+This section shows the interfaces belonging to the system. We focused mainly on the internal interfaces of the Application Server and on those which are external but related to the Application Server itself.\\
+Furthermore, the Forward Interface between the Web Server and the Router is reported without any method for semplicity reasons, as it contains all the methods belonging to the Interfaces between the Router component itself and all the other components of the Application Server.\\
+Further details about the Interfaces are mentioned in the following commented code lines.\\
 
 \begin{lstlisting}[language=Java]
-//Web server manages the HTTPS communications with MobileApplication and Browser
+//				--- COMPONENT INTERFACES ---
+
+//Interfaces between MobileApplication, Browser and Web Server: Web server manages the HTTPS communications with MobileApplication and Browser
 
 //User
 public interface MobileAppInterface{} //HTTPS request

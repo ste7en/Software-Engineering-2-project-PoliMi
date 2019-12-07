@@ -22,8 +22,7 @@ The color in the background of the components represent the tier they belong to,
 	\begin{description}
 	\item[Router]: communicates with the Apache Web Server through TCP/IP protocol; its function is to forward requests and data coming from the Apache Web Server to the right component in the Application Server. For semplicity reasons, in this document the Router component is often not mentioned, although its role is crucial to the proper functioning of the whole system;
 	 
-	\item[Authentication Manager]: handles the registration process for each \ic{User},
-	allows Registered Entities to be identified by their identifier (the email for the \ic{User} and the \ic{Reference code} for the \ic{Municipality}) and stores the password in Authentication Database through Authentication DAO. Moreover, it guarantees a chain of custody matching \ic{User reports}' data and \ic{Users' identifiers} in a digital signature;
+	\item[Authentication Manager]: handles the registration process for each \ic{User}, allows Registered Entities to be identified by their identifier (the email for the \ic{User} and the \ic{Reference code} for the \ic{Municipality}) and stores their password in Authentication Database through Authentication DAO. Moreover, it guarantees a chain of custody matching \ic{User reports}' data and \ic{Users' identifiers} in a digital signature;
 	
 	\item[Statistics Manager]: contains all the business logic in order to aggregate \ic{User reports} data and generate \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters;
 	
@@ -31,14 +30,15 @@ The color in the background of the components represent the tier they belong to,
 	
 	\item[Interventions Manager]: contains the logic able to cross \ic{User reports'} and \ic{Accidents'} data in order to generate \ic{Possible interventions} to suggest to \ic{Municipality};
 	
-	\item[Accidents Manager]: contains all the business logic in order to send and receive periodically \ic{Accidents} data from \ic{Municipality} IT, loading and storing them in Accidents Database through Accidents DAO. It also collects Accidents data stored in Accidents database basing on particular parameters;
+	\item[Accidents Manager]: contains all the business logic in order to send and receive periodically \ic{Accidents} data from \ic{Municipality}, loading and storing them in Accidents Database through Accidents DAO. It also collects Accidents data stored in Accidents database basing on particular parameters;
 	
-	\item[Notification Manager]: for each new violation reported by \ic{Users}, it is responsible of sending a notification to the concerned \ic{Municipality}.
+	\item[Notification Manager]: for each new violation reported by the \ic{Users}, it is responsible of sending a notification to the concerned \ic{Municipality}.
 	\end{description}
 
 \subsection{Database tier\label{sect:2.2.4}}
 	\begin{description}
 	\item[Authentication, Reports, Accidents and Interventions DAO]: the details about the Data Access Objects are shown in subsection \ref{subsect:2.6.4};
+	
 	\item[Authentication, Reports, Accidents and Interventions Database]: the details about the Relational Databases are presented in subsection \ref{2.7.3}.
 	\end{description}
 	
@@ -46,7 +46,7 @@ The color in the background of the components represent the tier they belong to,
 	\begin{description}
 	\item[Google Maps]: communicates with the Browser in order to provide the maps visualization service, through APIs which guarantee also the integration with the service itself;
 	
-	\item[Municipality IT]: communicates with the Application Server through RESTful APIs, both to receive notifications about new \ic{User reports} (in particular from the Notification Manager) and to provide Accidents data from its own database (in particular answering the request of Accidents manager);
+	\item[Municipality IT]: communicates with the Application Server through RESTful APIs, both to receive notifications about new \ic{User reports} (in particular from the Notification Manager) and to provide Accidents data from its own database (in particular answering the request of the Accidents manager);
 	
 	\item[License plate recognition service]: communicates with the Application Server (in particular with the User reports manager) through RESTful APIs, to receive a \ic{User picture} and send back a text representing the license plate recognized in the picture (if one is recognized). 
 	\end{description}

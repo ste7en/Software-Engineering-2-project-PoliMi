@@ -3,16 +3,16 @@
 
 \section{Deployment View\label{sect:2.3}}
 
-The following section aims at describing the deployment diagram of the \ic{System to be}, from a physical point of view with details on how both hardware and software will be implemented and delivered.
+The following section aims at describing the deployment diagram of the system-to-be, from a physical point of view, with details on how both hardware and software will be implemented and delivered.
 
 \image{15 cm}{Images/Chap2/DeploymentDiagram.png}{SafeStreets Deployment Diagram}{DeploymentDiagram}
 
-A load balancer is at the system's core, to balance the calls from clients to servers, which will be the busy ones. These calls use ISO/OSI layer 7 protocol HTTP to implement a RESTful web service between each \ic{User}'s mobile application or \ic{Municipality}'s devices and the Application Servers. \\ 
+A load balancer is at the system's core, to balance the calls from clients to servers. These calls use ISO/OSI layer 7 protocol HTTP to implement a RESTful web service between each \ic{User}'s mobile application or \ic{Municipality}'s device and the Application Servers. \\ 
 
-From an organization's internal perspective, instead, all servers communicate each other and with the database through a TCP/IP protocol. Indeed the main Application, which handles the \ic{business logic rules}, communicates with the Web Server through public interfaces defined in the following paragraphs, while the communication between each J2EE Application instances and the Database Server is made possible through PostgreSQL public API of the \ic{database system}. \\
+From an organization internal perspective, instead, all servers communicate with each other and with the database through a TCP/IP protocol. Indeed the Application Server, which handles the business logic rules, communicates with the Web Server through public interfaces defined in the following paragraphs, while the communication between each J2EE Application instances and the Database Server is made possible through PostgreSQL public API of the database system. \\
 
-To manage the situation of high workload and ensure both \ic{reliability} and \ic{availability}, the server architecture has been split in several machines: three Web Servers will handle the HTTP/REST calls and from a minimum of 3 to a maximum of 6 machines will host and replicate the Application Server. \\
-In order to understand better the normal work load of the system, a \ic{load testing} analysis will be performed once finished the implementation phase, with a testing tool like \ic{Apache JMeter}. \\\\
+To manage the situation of high workload and ensure both reliability and availability, the server architecture has been split in several machines: three Web Servers will handle the HTTP/REST calls and from a minimum of 3 to a maximum of 6 machines will host and replicate the Application Server. \\
+In order to understand better the normal work load of the system, a load testing analysis should be performed once the implementation phase will be over, with a testing tool like Apache JMeter. \\
 For availability purposes, also the load balancers have been duplicated with an IaaS management of internal and external IP addresses of the machines. \\\\
 
 \newpage
