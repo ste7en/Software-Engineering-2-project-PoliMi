@@ -64,27 +64,45 @@ The choice that has been taken for the Database is PostgreSQL as relational DBMS
 \section{Integration\label{5.3}}
 
 In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead.
+\subsection{Entry Criteria}
+For the success of the integration phase some precondition need to be satisfied:
+\begin{itemize}
+	\item{The RASD and the DD must be available to all the stakeholders.}
+	\item{TheDBMS should be completely operative in order to test all the components that use it.} 
+	\item{The Map API should be fully operative and available.}
+\end{itemize}
 
-\subsection{Integration of the internal components of the Business logic tier}
-Each internal component of the Application Server, that contains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.
+\subsection{Elements to be integrated}
+Considering the huge complexity of the system we have to distinguish the subsystems into four categories:
+\begin{itemize}
+	\item{Presentation tier components:} Mobile application, Web application
+	\item{Service tier components:} Web Server
+	\item{Business logic tier components:} Application Server internal components
+	\item{Database tier components:} Data Access Objects, DB components
+	\item{External components}: Google Maps, License Plate Recognition Service, Municipality IT
+\end{itemize}
+
+\subsection{Integration Sequence}
+\subsubsection{Integration of the internal components of the Business logic tier}
+Each internal component of the Application Server, that cointains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.
 
 \image{4cm}{Images/Chap5/CompIntApplicationServer1.png}{Statistics Manager Integration}{}
 \image{6.5cm}{Images/Chap5/CompIntApplicationServer2.png}{Interventions Manager Integration}{}
 
-\subsection{Integration with the Service tier}
-The following diagrams represent the integration between the Presentation tier and the Service tier and then between the Web Server component and the Router component.
+\subsubsection{Integration with the Web tier}
+The following diagrams represent the integration between the Presentation tier and the Web tier and then between the Web Server component and the Router component.
 
 \image{4.5cm}{Images/Chap5/CompIntFrontendWebServer.png}{Web Server Integration}{}
 \image{4cm}{Images/Chap5/CompIntWebServerRouter.png}{Router Integration}{}
 
-\subsection{Integration with the external services}
+\subsubsection{Integration with the external services}
 The following diagrams represent the integration of the components that are part of the Presentation tier and the Business logic tier with some External Service.
 
 \image{4cm}{Images/Chap5/CompIntFrontendExtServ.png}{Google Maps Integration}{}
 \image{5.5cm}{Images/Chap5/CompIntAppServerExtService1.png}{Municipality IT Integration}{}
 \image{4cm}{Images/Chap5/CompIntAppServerExtService2.png}{License Plate Recognize Service Integration}{} 
 
-\subsection{Integration with the Database tier}
+\subsubsection{Integration with the Database tier}
 The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows.
 \image{10cm}{Images/Chap5/CompIntAppServerDataLayer.png}{DataAccessObjects - Database Integration}{}
 
@@ -92,11 +110,11 @@ The DataAccessObject components essentially "use"manager components and database
 
 \section{Test Plan\label{5.4}}
 
-\subsection{Unit Testing\label{5.4.1}}
-All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90\% (only the View part could not respect the line covarge constraint).
+\subsubsection{Unit Testing\label{5.4.1}}
+All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90\% (only the View part could not respect the line covarge constraint). The purpose is to validate that each unit of the software works as designed. It is performed prior to Integration Testing. Every component have to be tested using a white-box testing unit-test after every component implementation.
 
 
-\subsection{Integration Testing\label{5.4.2}}
+\subsubsection{Integration Testing\label{5.4.2}}
 
 The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning. The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested succesfully. In this way it should be easier to localize any eventual fault and no time is wasted waiting for all modules to be developed.
 \end{document}
