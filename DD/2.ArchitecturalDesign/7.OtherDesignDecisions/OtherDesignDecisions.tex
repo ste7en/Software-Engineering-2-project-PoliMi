@@ -14,6 +14,14 @@ For each registered entity, their access passwords are hashed using a SHA512 alg
 When a \ic{User} sends his \ic{User report} to the application server, a hash function on its data and \ic{User} entity is computed and stored in the same database of the report. At retrieval time, the same function is computed and the values are checked to ensure that no alterations occurred.
 
 \subsection{Relational Database\label{2.7.3}}
+The data management of the system will be handled by a Relational DBMS. This choice has, from the organization point of view, both internal and external motivations: the first thing to consider is the effort and time spent by the development team, which is familiar with relational databases, while the usage of a NoSQL DB would require time for the study and design process of it.
+Moreover, a relational database is transactional, each access operation represents a real-world event of every enterprise and the so-called \ic{ACID properties} are guaranteed: 
 
-\newpage
+	\begin{description}
+		\item[Atomicity] no partial execution are allowed
+		\item[Consistency] every state is consistent after a transaction execution
+		\item[Isolation] transaction should be executed in isolation from other transactions
+		\item[Durability] even in case of failures, changes in the database should persist
+	\end{description}
+
 \end{document}
