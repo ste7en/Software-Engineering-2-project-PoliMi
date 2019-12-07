@@ -5,7 +5,7 @@
 \chapter{Implementation, Integration and Test Plan}
 \thispagestyle{fancy}
 
-\section{Development Process\label{5.1}}
+\section{Development Process\label{sect:5.1}}
 
 The following table represents the main features of the system-to-be, along with the relative importance that it has for the customer and the difficulty of implementing it. Of course, the Implementation, Integration and Testing process will be based on this evaluation.
 
@@ -53,7 +53,7 @@ The Mobile Application must be implemented in two different architecture respect
 The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed with HTTPS protocol, while the communication with Google Maps service must be performed through Maps API.
 
 \subsubsection{Web Server}
-The implementation of this tier is realized through an Apache Web Server 2.4.41. A TCP/IP protocol is used to interface with the J2EE application server and the HTTPS protocol to interface with the clients and the load balancer (Section\ref{sect:2.3}). 
+The implementation of this tier is realized through an Apache Web Server 2.4.41. A TCP/IP protocol is used to interface with the J2EE application server and the HTTPS protocol to interface with the clients and the load balancer (Section \ref{sect:2.3}). 
 
 \subsubsection{Application Server}
 The Application Server implementation will be executed on a machine with Red Hat JBoss EAP on it, using a J2EE software. A TCP/IP protocol is used to interface the software with each Database Server, while the interface with External Services like \ic{Municipality} IT and \ic{License plate recognition service} uses RESTful APIs.
