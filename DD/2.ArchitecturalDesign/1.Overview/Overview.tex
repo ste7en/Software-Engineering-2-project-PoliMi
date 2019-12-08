@@ -5,13 +5,13 @@
 
 \image{18cm}{Images/Chap2/Overview.png}{Overview Diagram}{}
 
-The figure above represents an high-level description of the main components which constitute the system-to-be. They are organized in a 4-tiers architecture, in particular:
+The figure above represents an high-level description of the main components which constitute the system-to-be. They are organized in a 4-tier architecture, in particular:
 \begin{description}
-	\item [Browser]: is the Presentation tier for the \ic{Municipality} Browser, it communicates with the Web Server;
-	\item [Mobile application]: is the Presentation tier for the \ic{User} Mobile Application, it communicates with the Web Server;
-	\item [Web Server]: represents the Service tier, it communicates with the \ic{Municipality} Browser and with the Mobile Application on one hand (i.e. the Presentation tier) and with the components of the Application Server on the other (i.e. the Business logic tier);
-	\item [Application Server]: represents the Business logic tier of the system, it communicates with the Web Server on one hand and with the Database tier on the other; 
-	\item [Data Access Objects and Database]: represent the Database tier of the system; the Database communicates with the Business tier through the Data Access Objects (DAO).
+	\item [Browser:] is the Presentation tier for the \ic{Municipality} Browser, it communicates with the Web Server;
+	\item [Mobile application:] is the Presentation tier for the \ic{User} Mobile Application, it communicates with the Web Server;
+	\item [Web Server:] represents the Service tier, it communicates with the \ic{Municipality} Browser and with the Mobile Application on one hand (i.e. the Presentation tier) and with the components of the Application Server on the other (i.e. the Business logic tier);
+	\item [Application Server:] represents the Business logic tier of the system, it communicates with the Web Server on one hand and with the Database tier on the other; 
+	\item [Data Access Objects and Database:] represent the Database tier of the system; the Database communicates with the Business tier through each Data Access Object (DAO).
 \end{description}
 In particular, Web Server and Application Server have been separated mainly for security reasons.
 Further details about the architectural choices can be found in the sections \ref{sect:2.6} and \ref{sect:2.7}.
