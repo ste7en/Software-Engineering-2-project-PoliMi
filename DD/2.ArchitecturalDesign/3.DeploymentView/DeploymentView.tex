@@ -7,7 +7,7 @@ The following section aims at describing the deployment diagram of the system-to
 
 \image{15 cm}{Images/Chap2/DeploymentDiagram.png}{SafeStreets Deployment Diagram}{DeploymentDiagram}
 
-A load balancer is at the system's core, to balance the calls from clients to servers. These calls use ISO/OSI layer 7 protocol HTTP to implement a RESTful web service between each \ic{User}'s mobile application or \ic{Municipality}'s device and the Application Servers. \\ 
+A load balancer is at the system's core, to balance the calls from clients to servers. These calls use ISO/OSI layer 7 protocol HTTP to implement a RESTful web service between each \ic{User}'s smartphone or \ic{Municipality}'s device and the Application Servers. \\ 
 
 From an organization internal perspective, instead, all servers communicate with each other and with the database through a TCP/IP protocol. Indeed the Application Server, which handles the business logic rules, communicates with the Web Server through public interfaces defined in the following paragraphs, while the communication between each J2EE Application instances and the Database Server is made possible through PostgreSQL public API of the database system. \\
 

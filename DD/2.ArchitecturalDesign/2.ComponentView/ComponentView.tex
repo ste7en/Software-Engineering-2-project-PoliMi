@@ -26,7 +26,7 @@ The color in the background of the components represent the tier they belong to,
 	
 	\item[Statistics Manager]: contains all the business logic in order to aggregate \ic{User reports} data and generate \ic{Public} and \ic{Detailed} \ic{Statistics} based on particular filters;
 	
-	\item[User reports Manager]: contains all the business logic in order to send and receive \ic{User report} data, loading and storing them in Reports Database through Reports DAO and handles the \ic{Ticket Feedback} issuing confirmation sent by the \ic{Municipality}, updating its status. Additionally, it manages the transfer of \ic{User picture} to the \ic{License plate recognition service}, eventually sending back to the client the recognized license plate, and allows specific \ic{User reports'} information retrieval based on particular parameters;
+	\item[User reports Manager]: contains all the business logic in order to send and receive \ic{User report} data, loading and storing them in Reports Database through Reports DAO. It also handles the \ic{Ticket Feedback} issuing confirmation sent by the \ic{Municipality}, updating its status. Additionally, it manages the transfer of \ic{User picture} to the \ic{License plate recognition service}, eventually sending back to the client the recognized license plate or a message suggesting to re-take the photo if it has not been possible to recognize the license plate. At the end it allows specific \ic{User reports'} information retrieval based on particular parameters;
 	
 	\item[Interventions Manager]: contains the logic able to cross \ic{User reports'} and \ic{Accidents'} data in order to generate \ic{Possible interventions} to suggest to \ic{Municipality};
 	
@@ -44,11 +44,11 @@ The color in the background of the components represent the tier they belong to,
 	
 \subsection{External services and infrastructures\label{sect:2.2.5}}
 	\begin{description}
-	\item[Google Maps]: communicates with the Browser in order to provide the maps visualization service, through APIs which guarantee also the integration with the service itself;
+	\item[Google Maps]: communicates with the Browser in order to provide the maps visualization service that allows to identify the area related to the suggested \ic{Possible Interventions}. It uses APIs which guarantee also the integration with the service itself;
 	
 	\item[Municipality IT]: communicates with the Application Server through RESTful APIs, both to receive notifications about new \ic{User reports} (in particular from the Notification Manager) and to provide Accidents data from its own database (in particular answering the request of the Accidents manager);
 	
-	\item[License plate recognition service]: communicates with the Application Server (in particular with the User reports manager) through RESTful APIs, to receive a \ic{User picture} and send back a text representing the license plate recognized in the picture (if one is recognized). 
+	\item[License plate recognition service]: communicates with the Application Server (in particular with the User reports Manager) through RESTful APIs, to receive a \ic{User picture} and send back a text representing the license plate recognized in the picture (if one is recognized). 
 	\end{description}
 
 \newpage
