@@ -7,8 +7,7 @@
 
 \section{Development Process\label{sect:5.1}}
 
-The following table represents the main features of the system-to-be, along with the relative importance that it has for the customer and the difficulty of implementing it. Of course, the Implementation, Integration and Testing process will be based on this evaluation.
-
+The following table represents the main features of the system-to-be, along with the relative importance that it has for the customer and the difficulty of implementing it. 
 \begin{center}
 	\begin{longtable}{| p{.43\linewidth} | p{.23\linewidth} | p{.23\linewidth} |} 
 		
@@ -24,7 +23,8 @@ The following table represents the main features of the system-to-be, along with
 		
 	\end{longtable}
 \end{center}
-
+Of course, the Implementation, Integration and Testing process will be based on this evaluation.
+\newpage
 
 
 \section{Implementation\label{5.2}}
@@ -36,9 +36,9 @@ This subsection shows the list of the Application Server components and reports 
 	\item[User reports Manager]: it is the first component to be implemented as it has an high importance for the customer, it has an high difficult of implementation and will be used by many other components;
 	\item[Accidents Manager]: it follows the implementation of the User report Manager component, since it is used by the Interventions Manager component to generate \ic{Possible Interventions} (so it has to be implemented before that), but the correlated feature has a lower importance for the customer than the User report management;
 	\item[Interventions Manager]: it should be implemented after the User report Manager component and the Accidents Manager because it uses them in order to generate \ic{Possible Interventions};
-	\item[Statistics Manager]: it could be implemented in parallel with Accidents Manager, after User report Manager, as it uses this one to generate both \ic{Public Statistics} and \ic{Detailed Statistics}. Anyway, it is preferable do it after Accidents Manager due to its lower importance;
-	\item[Notification Manager]: it could be implemented in parallel with Accidents Manager and Statistics Manager, after User report Manager, but it is done immediately after User report Manager as it is part of the same feature.
-	\item[Authentication Manager]: it follows the implementation of User report Manager and should be built in parellel with Notification Manager due to the fact that is used to accomplish the "\ic{User report} generation" feature (digital signature), despite it also manages the "Sign up and login" feature which has the lowest importance;
+	\item[Statistics Manager]: it could be implemented in parallel with Accidents Manager, after User report Manager, as it uses this one to generate both \ic{Public Statistics} and \ic{Detailed Statistics}. Anyway, it is preferable to do it after Accidents Manager due to its lower importance for the customer;
+	\item[Notification Manager]: it could be implemented in parallel with Accidents Manager and Statistics Manager, after User report Manager, but it is done immediately after User report Manager as it is part of the same feature ("User report generation");
+	\item[Authentication Manager]: it follows the implementation of User report Manager and should be built in parallel with Notification Manager due to the fact that it is used to accomplish the "\ic{User report} generation" feature (in particular, for the digital signature), despite it also manages the "Sign up and login" feature which is the one with the lowest importance for the customer;
 	\item[Router]: it is the last component that has to be implemented because it provides the communications redirection with the other components.
 	
 \end{description}
@@ -47,50 +47,54 @@ This subsection shows the list of the Application Server components and reports 
 \subsection{Implementation Choices\label{5.2.2}}
 
 \subsubsection{Mobile Application}
-The Mobile Application must be implemented in two different architecture respecting native languages, Swift 4 for iOS application and Java for Android ones. The communication with the device must be done using the default frameworks of the respective system, moreover the communication with the Apache Web Server must be performed with HTTPS protocol.
+The Mobile Application must be implemented in two different architecture respecting native languages, Swift 4 for iOS application and Java for Android ones. The communication with the device must be done using the default frameworks of the respective system; moreover, the communication with the Apache Web Server must be performed with HTTPS protocol.
 
 \subsubsection{Browser}
-The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed with HTTPS protocol, while the communication with Google Maps service must be performed through Maps API.
+The Web Application must be implemented for different operating systems in order to be compatible with the most number of existing browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari. The communication with the Apache Web Server must be performed through the HTTPS protocol, while the communication with Google Maps service must be performed through Maps API.
 
 \subsubsection{Web Server}
-The implementation of this tier is realized through an Apache Web Server 2.4.41. A TCP/IP protocol is used to interface with the J2EE application server and the HTTPS protocol to interface with the clients and the load balancer (Section \ref{sect:2.3}). 
+The implementation of this tier is realized through an Apache Web Server 2.4.41. A TCP/IP protocol is used to interface with the J2EE Application Server and the HTTPS protocol to interface with the clients and the load balancer (Section \ref{sect:2.3}). 
 
 \subsubsection{Application Server}
-The Application Server implementation will be executed on a machine with Red Hat JBoss EAP on it, using a J2EE software. A TCP/IP protocol is used to interface the software with each Database Server, while the interface with External Services like \ic{Municipality} IT and \ic{License plate recognition service} uses RESTful APIs.
+The Application Server implementation will be executed on a machine with Red Hat JBoss EAP on it, using a J2EE software. A TCP/IP protocol is used to interface the software with every Database Server, while the interface with External Services like \ic{Municipality} IT and \ic{License plate recognition service} uses RESTful APIs.
 
 \subsubsection{Database}
-The choice that has been taken for the Database is PostgreSQL as relational DBMS, already previously described and motivated in Section \ref{2.7.3}.
+The choice that has been taken for the Database is PostgreSQL as Relational DBMS, already previously described and motivated in subsection \ref{2.7.3}.
+
+
+\newpage
+
 
 \section{Integration\label{5.3}}
 
-In this Section the integration flow is shown. Each component is integrated in the component that receive the arrowhead.
+In this Section the integration flow is shown. Each component is integrated in the component that receives the arrowhead.
 \subsection{Entry Criteria}
 For the success of the integration phase some precondition need to be satisfied:
 \begin{itemize}
-	\item{The RASD and the DD must be available to all the stakeholders.}
-	\item{TheDBMS should be completely operative in order to test all the components that use it.} 
-	\item{The Map API should be fully operative and available.}
+	\item{The RASD and the DD must be available to all the stakeholders;}
+	\item{The DBMS should be completely operative in order to test all the components that use it;} 
+	\item{The Maps API should be fully operative and available.}
 \end{itemize}
 
 \subsection{Elements to be integrated}
 Considering the huge complexity of the system we have to distinguish the subsystems into four categories:
 \begin{itemize}
-	\item{Presentation tier components:} Mobile application, Web application
-	\item{Service tier components:} Web Server
-	\item{Business logic tier components:} Application Server internal components
-	\item{Database tier components:} Data Access Objects, DB components
-	\item{External components}: Google Maps, License Plate Recognition Service, Municipality IT
+	\item{Presentation tier components:} Mobile application, Web application;
+	\item{Service tier components:} Web Server;
+	\item{Business logic tier components:} Application Server internal components;
+	\item{Database tier components:} Data Access Objects, DB components;
+	\item{External components}: Google Maps, License Plate Recognition Service, Municipality IT.
 \end{itemize}
 
 \subsection{Integration Sequence}
 \subsubsection{Integration of the internal components of the Business logic tier}
-Each internal component of the Application Server, that cointains the entire Business logic of the system is integrated with the Router component. It provides to estabilish communications between the WebServer and the Application components and it has been omitted in this paragraph due to redundancy reasons.
+Each internal component of the Application Server, that cointains the entire Business logic of the system, is integrated with the Router component. It provides to estabilish communications between the Web Server and the Application Server components and it has been omitted in this paragraph due to redundancy reasons.
 
 \image{4cm}{Images/Chap5/CompIntApplicationServer1.png}{Statistics Manager Integration}{}
 \image{6.5cm}{Images/Chap5/CompIntApplicationServer2.png}{Interventions Manager Integration}{}
 
 \subsubsection{Integration with the Web tier}
-The following diagrams represent the integration between the Presentation tier and the Web tier and then between the Web Server component and the Router component.
+The following diagrams represent the integration between the Presentation tier and the Service tier and then between the Web Server component and the Router component.
 
 \image{4.5cm}{Images/Chap5/CompIntFrontendWebServer.png}{Web Server Integration}{}
 \image{4cm}{Images/Chap5/CompIntWebServerRouter.png}{Router Integration}{}
@@ -103,18 +107,23 @@ The following diagrams represent the integration of the components that are part
 \image{4cm}{Images/Chap5/CompIntAppServerExtService2.png}{License Plate Recognize Service Integration}{} 
 
 \subsubsection{Integration with the Database tier}
-The DataAccessObject components essentially "use"manager components and database components, as the arrowhead shows.
+The DataAccessObject components essentially "use" manager components and database components, as the arrowhead shows.
 \image{10cm}{Images/Chap5/CompIntAppServerDataLayer.png}{DataAccessObjects - Database Integration}{}
 
+\newpage
 %---
 
 \section{Test Plan\label{5.4}}
 
 \subsubsection{Unit Testing\label{5.4.1}}
-All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90\% (only the View part could not respect the line covarge constraint). The purpose is to validate that each unit of the software works as designed. It is performed prior to Integration Testing. Every component have to be tested using a white-box testing unit-test after every component implementation.
+All the classes should be tested with Unit Tests checking their behaviour, in particular using tools like JUnit; the line coverage is expected to be of at least 90\% (only the View part could not respect the line covarge constraint).\\
+
+The purpose is to validate that each unit of the software works as designed. It is performed prior to Integration Testing. Every component have to be tested using a white-box testing unit-test after every component implementation.
 
 
 \subsubsection{Integration Testing\label{5.4.2}}
 
-The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning. The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested successfully. In this way it should be easier to localize any eventual fault and no time is wasted waiting for all modules to be developed.
+The approach adopted is incremental, so testing is done by joining two or more modules that are logically related. Then the other related modules are added and tested for the proper functioning.\\
+
+The strategy, specifically, is bottom-up; each module at lower levels is tested with higher modules until all modules are tested successfully. In this way it should be easier to localize any eventual fault and no time is wasted waiting for all modules to be developed.
 \end{document}
