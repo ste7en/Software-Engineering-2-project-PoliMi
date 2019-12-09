@@ -15,7 +15,8 @@
 		\begin{enumerate}
 			\item \ic{User} taps on "Sign Up" button
 			\item \ic{User} fills the "email" and "password" fields
-			\item \ic{User} checks the "Accept terms and conditions" checkbox
+			\item \ic{User} checks the "Accept \ic{Terms and conditions}" checkbox
+			\item \ic{User} checks the ''Accept \ic{Privacy statement}" checkbox
 			\item \ic{User} taps on "Confirm" button
 			\item SafeStreets saves \ic{User} information
 		\end{enumerate}
@@ -26,7 +27,8 @@
 			\item Inserted email already registered for another \ic{User}
 			\item Inserted password is not valid
 			\item Not all required fields are filled in
-			\item "Accept terms and conditions" checkbox is not checked
+			\item "Accept \ic{Terms and conditions}" checkbox is not checked
+			\item "Accept \ic{Privacy statement}" checkbox is not checked
 			\item \ic{User} is already signed up
 		\end{enumerate}
 		\ic{User} is invited to try again signing up, reporting which error they have committed. \\ 
@@ -104,8 +106,8 @@
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{U4: \ic{User} sends \ic{User report} to \ic{Municipality}}\\ \hline
-		Actors & \ic{User}, \ic{License plate recognition service}, \ic{Municipality}\\ \hline
+		\textbf{Name} & \textbf{U4: \ic{User} sends \ic{User report} to SafeStreets}\\ \hline
+		Actors & \ic{User}, \ic{License plate recognition service}\\ \hline
 		Entry Conditions & \ic{User} successfully logged into SafeStreets and installed SafeStreets application on the smartphone\\ \hline
 		Events Flow & 
 		\begin{enumerate}
@@ -115,7 +117,7 @@
 			\item \ic{License plate recognition service} sends back to SafeStreets a text representing the \ic{Recognized license plate}, if it is successfully recognized
 			\item \ic{User} selects a \ic{Type of violation} and presses the “Send” button
 			\item SafeStreets stores the newly generated \ic{User report} in its own Database
-			\item SafeStreets sends \ic{Municipality} the newly generated \ic{User report}
+			\item SafeStreets sends \ic{Municipality} a \ic{User report notification} about the newly generated \ic{User report}
 		\end{enumerate}
 		\\ \hline
 		Exit Condition & SafeStreets correctly collected \ic{User report}\\ \hline
@@ -216,31 +218,59 @@
 
 %--- --- --- --- ---
 
-% U8:
+% U8a:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
 		
 		\hline
-		\textbf{Name} & \textbf{U8: \ic{SafeStreets} suggests \ic{Possible interventions} to \ic{Municipality}}\\ \hline
+		\textbf{Name} & \textbf{U8a: SafeStreets generates \ic{Possible interventions}}\\ \hline
 		Actors & \ic{Municipality}\\ \hline
 		Entry Conditions & \ic{Municipality} grants SafeStreets access to its own \ic{Accidents} Database\\ \hline
 		Events Flow & 
 		\begin{enumerate}
-			\item A certain number of \ic{User reports} for a particular zone of the city is reached
-			\item SafeStreets identifies the precise area in which a \ic{Possible intervention} could be carried out
-			\item SafeStreets sends to \ic{Municipality} the \ic{Possible intervention} 
+			\item SafeStreets requests \ic{Municipality} previous Accidents data
+			\item \ic{Municipality} sends SafeStreets the requested Accidents data
+			\item SafeStreets crosses its own \ic{User report} data with Accidents data in order to generate \ic{Possible interventions} 
 		\end{enumerate}
 		\\ \hline
-		Exit Condition & \ic{Municipality} correctly receives the suggested \ic{Possible intervention}\\ \hline
+		Exit Condition & SafeStreets correctly generates \ic{Possible interventions}\\ \hline
 		Exceptions & No Exceptions.
 		\\ \hline
-		\caption*{U\subs{8}}
+		\caption*{U\subs{8a}}
 	\end{longtable}
 \end{center}
 
 %--- --- --- --- ---
 
 \newpage
+% U8b:
+\begin{center}
+	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}
+		
+		\hline
+		\textbf{Name} & \textbf{U8b: \ic{Municipality} visualizes \ic{Possible interventions} suggested by \ic{SafeStreets}}\\ \hline
+		Actors & \ic{Municipality}\\ \hline
+		Entry Conditions & \ic{Municipality} successfully logged into SafeStreets\\ \hline
+		Events Flow & 
+		\begin{enumerate}
+			\item \ic{Municipality} presses the “Possible interventions” button
+			\item \ic{Municipality} selects a particular \ic{Possible intervention} to visualize
+			\item SafeStreets shows \ic{Municipality} the required \ic{Possible intervention} 
+		\end{enumerate}
+		\\ \hline
+		Exit Condition & \ic{Municipality} correctly visualizes the suggested \ic{Possible intervention}\\ \hline
+		Exceptions &
+		\begin{enumerate}
+			\item No \ic{Possible intervention} has been generated yet.
+		\end{enumerate}
+		\ic{Municipality} is asked to retry later.
+		\\ \hline
+		\caption*{U\subs{8b}}
+	\end{longtable}
+\end{center}
+
+%--- --- --- --- ---
+
 % U9:
 \begin{center}
 	\begin{longtable}{| p{.25\linewidth} | p{.75\linewidth} |}

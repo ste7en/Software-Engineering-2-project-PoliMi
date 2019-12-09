@@ -8,7 +8,7 @@
 	\section{Alloy model}
 	
 	This section includes Alloy code that describes the model and checks whether it is consistent or not. At the end of the code the Alloy generated World is shown. \\
-	The main objective, driving the formal modeling activity has been the representation of the statistics visualization through SafeStreets application. In particular, the \ic{Detaied statistics}, belonging to \ic{Municpality}, extend the \ic{Public statistics}, belonging to the \ic{User}. Indeed, the \ic{Municipality} can select an additional parameter (\ic{License Plate}) than the \ic{User}, according to the different level of visibility. \\
+	The main objective, driving the formal modeling activity has been the representation of the statistics visualization through SafeStreets application. In particular, the \ic{Detaied statistics}, belonging to \ic{Municpality}, extend the \ic{Public statistics}, belonging to the \ic{User}. Indeed, the \ic{Municipality} can select an additional parameter (license plate) than the \ic{User}, according to the different level of visibility. \\
 	Some necessary structural constraints are expressed and properly commented in the Alloy formal notation. These bonds are verified analyzing the worlds generated running the model and checking the relevant assertion. \\
 	
 	\lstinputlisting[language=alloy]{Helper/SafeStreetsV2.als}
