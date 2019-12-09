@@ -20569,9 +20569,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 152,
-											"top": 142,
+											"top": 149,
 											"width": 76.5908203125,
-											"height": 26,
+											"height": 13,
 											"alpha": -4.279981838960679,
 											"distance": 14.317821063276353,
 											"hostEdge": {
@@ -20678,7 +20678,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 112.72998046875,
+											"left": 111.99365234375,
 											"top": 381,
 											"width": 1,
 											"height": 13
@@ -20692,7 +20692,7 @@
 											"font": "Arial;13;1",
 											"left": 93,
 											"top": 381,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -20834,7 +20834,7 @@
 													"left": 1437,
 													"top": 47,
 													"width": 95,
-													"height": 26,
+													"height": 13,
 													"text": ":Municipality IT",
 													"wordWrap": true
 												},
@@ -21501,9 +21501,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 146,
-											"top": 287,
+											"top": 294,
 											"width": 101.14990234375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.5707958267948967,
 											"distance": 20,
 											"hostEdge": {
@@ -21613,9 +21613,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 244,
-											"top": 302,
+											"top": 309,
 											"width": 104.05078125,
-											"height": 26,
+											"height": 13,
 											"alpha": -4.547241113780983,
 											"distance": 12.165525060596439,
 											"hostEdge": {
@@ -22727,9 +22727,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 270,
-											"top": 486,
+											"top": 493,
 											"width": 106.21533203125,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.5475437093898379,
 											"distance": 43.01162633521314,
 											"hostEdge": {
@@ -23285,9 +23285,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 464,
-											"top": 600,
+											"top": 606,
 											"width": 93.21533203125,
-											"height": 39,
+											"height": 26,
 											"alpha": -4.563499521772783,
 											"distance": 20.223748416156685,
 											"hostEdge": {
@@ -26314,9 +26314,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 144,
-											"top": 951,
+											"top": 958,
 											"width": 109.83349609375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.5208384298260835,
 											"distance": 20.024984394500787,
 											"hostEdge": {
@@ -50096,9 +50096,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 280,
-											"top": 118,
+											"top": 112,
 											"width": 91,
-											"height": 26,
+											"height": 39,
 											"alpha": 1.464060301056241,
 											"distance": 28.160255680657446,
 											"hostEdge": {
@@ -50762,17 +50762,17 @@
 												"$ref": "AAAAAAFu16EaSruGtHo="
 											},
 											"font": "Arial;13;0",
-											"left": 805,
-											"top": 294,
-											"width": 165.4833984375,
-											"height": 13,
-											"alpha": 1.523213698631046,
-											"distance": 21.02379604162864,
+											"left": 839,
+											"top": 285,
+											"width": 100,
+											"height": 26,
+											"alpha": 1.620755221269944,
+											"distance": 20.024984394500787,
 											"hostEdge": {
 												"$ref": "AAAAAAFu16EaSruHbS4="
 											},
 											"edgePosition": 1,
-											"text": "Latest Possible interventions",
+											"text": "Possible interventions",
 											"wordWrap": true
 										},
 										{
@@ -51631,7 +51631,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFutsXkpKqr9ZY="
 							},
-							"name": "Latest Possible interventions",
+							"name": "Possible interventions",
 							"source": {
 								"$ref": "AAAAAAFu154kULsdfCU="
 							},
@@ -74104,7 +74104,8 @@
 											"_parent": {
 												"$ref": "AAAAAAFux7aLiqU/0Q8="
 											},
-											"name": "filter"
+											"name": "filter",
+											"type": ""
 										}
 									]
 								},
@@ -75170,7 +75171,8 @@
 											"_parent": {
 												"$ref": "AAAAAAFu0ApdY5C3PQE="
 											},
-											"name": "ur"
+											"name": "ur",
+											"type": ""
 										}
 									]
 								},
