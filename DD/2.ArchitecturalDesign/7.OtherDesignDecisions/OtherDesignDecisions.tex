@@ -8,10 +8,13 @@ In order to guarantee the confidentiality of \ic{Users'} and \ic{Municipalities'
 
 For each registered entity, their access passwords are hashed using a SHA512 algorithm and then saved in the relative Database.
 
-\subsection{User report Chain of Custody\label{2.7.2}}
-\ic{User reports} constitutes sensitive data because they contain license plates numbers, GPS data and, in general, information about \ic{Traffic violations} that will be shown to a \ic{Municipality}. To ensure that these information won't be altered, a digital signature mechanism has been implemented to realize the chain of custody. \\
+\subsection{Chain of Custody\label{2.7.2}}
+\ic{User reports} constitutes sensitive data because they contain license plates' numbers, GPS data and, in general, information about \ic{Traffic violations} that will be shown to a \ic{Municipality}. To ensure that these information won't be altered, a digital signature mechanism has been implemented to realize the chain of custody. \\
 
-In particular, when a \ic{User} sends his/her \ic{User report} to the Application Server, a hash function on its data and the \ic{User} entity is computed and stored in the same Database of the report. At retrieval time, the same function is computed and the values are checked to ensure that no alterations have occurred.
+In particular, when a \ic{User} sends his/her \ic{User report} to the Application Server, a hash function on its data and the \ic{User} entity is computed, returning the digital signature corresponding to the specific report. This hashcode is, then, stored in the Authentication Database and accessed at retrieval time. 
+When a \ic{Municipality} client sends a request to access those \ic{User reports}, the same hash function is computed and the result is checked with the stored one, in order to ensure that no alterations have occurred. \\
+
+
 
 \subsection{Relational Database\label{2.7.3}}
 The data management of the system will be handled by a Relational DBMS. This choice has, from the organization point of view, both internal and external motivations: the first thing to consider is the effort and time spent by the development team, which is familiar with relational databases, while the usage of a NoSQL DB would require time for the study and design process of it.
