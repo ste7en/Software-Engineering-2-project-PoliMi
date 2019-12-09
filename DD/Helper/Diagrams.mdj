@@ -4246,7 +4246,7 @@
 											"font": "Arial;13;0",
 											"left": 637,
 											"top": 85,
-											"width": 189.91162109375,
+											"width": 189.91796875,
 											"height": 13,
 											"text": "«External service»"
 										},
@@ -4259,7 +4259,7 @@
 											"font": "Arial;13;1",
 											"left": 637,
 											"top": 100,
-											"width": 189.91162109375,
+											"width": 189.91796875,
 											"height": 13,
 											"text": "License plate recognition service"
 										},
@@ -4294,7 +4294,7 @@
 									"font": "Arial;13;0",
 									"left": 632,
 									"top": 80,
-									"width": 199.91162109375,
+									"width": 199.91796875,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFuiYAIl+0G4AQ="
@@ -4378,7 +4378,7 @@
 							"containerChangeable": true,
 							"left": 632,
 							"top": 80,
-							"width": 223.91162109375,
+							"width": 223.91796875,
 							"height": 38,
 							"autoResize": true,
 							"stereotypeDisplay": "decoration-label",
@@ -6157,7 +6157,7 @@
 											"font": "Arial;13;0",
 											"left": 285,
 											"top": 1061,
-											"width": 56.693359375,
+											"width": 56.69970703125,
 											"height": 13
 										},
 										{
@@ -6169,7 +6169,7 @@
 											"font": "Arial;13;1",
 											"left": 285,
 											"top": 1076,
-											"width": 56.693359375,
+											"width": 56.69970703125,
 											"height": 13,
 											"text": "Browser"
 										},
@@ -6204,7 +6204,7 @@
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 1056,
-									"width": 66.693359375,
+									"width": 66.69970703125,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFuiaZpG/Al1/4="
@@ -6288,7 +6288,7 @@
 							"containerChangeable": true,
 							"left": 280,
 							"top": 1056,
-							"width": 90.693359375,
+							"width": 90.69970703125,
 							"height": 38,
 							"autoResize": true,
 							"stereotypeDisplay": "decoration-label",
@@ -10535,7 +10535,7 @@
 											"font": "Arial;13;0",
 											"left": 317,
 											"top": 549,
-											"width": 114.8251953125,
+											"width": 114.83154296875,
 											"height": 13,
 											"text": "«database»"
 										},
@@ -10548,7 +10548,7 @@
 											"font": "Arial;13;1",
 											"left": 317,
 											"top": 564,
-											"width": 114.8251953125,
+											"width": 114.83154296875,
 											"height": 13,
 											"text": "Registered Entities"
 										},
@@ -10583,7 +10583,7 @@
 									"font": "Arial;13;0",
 									"left": 312,
 									"top": 544,
-									"width": 124.8251953125,
+									"width": 124.83154296875,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFujmPbVfmOm80="
@@ -10667,7 +10667,7 @@
 							"containerChangeable": true,
 							"left": 312,
 							"top": 544,
-							"width": 148.8251953125,
+							"width": 148.83154296875,
 							"height": 38,
 							"autoResize": true,
 							"stereotypeDisplay": "decoration-label",
@@ -20678,7 +20678,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 111.99365234375,
+											"left": 112.72998046875,
 											"top": 381,
 											"width": 1,
 											"height": 13
@@ -20692,7 +20692,7 @@
 											"font": "Arial;13;1",
 											"left": 93,
 											"top": 381,
-											"width": 13.99365234375,
+											"width": 14.72998046875,
 											"height": 13,
 											"text": "alt"
 										},
@@ -23285,16 +23285,16 @@
 											},
 											"font": "Arial;13;0",
 											"left": 464,
-											"top": 606,
+											"top": 600,
 											"width": 93.21533203125,
-											"height": 26,
+											"height": 39,
 											"alpha": -4.563499521772783,
 											"distance": 20.223748416156685,
 											"hostEdge": {
 												"$ref": "AAAAAAFu0I6iMaj7t5A="
 											},
 											"edgePosition": 1,
-											"text": "Check Digital signature",
+											"text": "Generate Digital signature",
 											"wordWrap": true
 										},
 										{
@@ -23951,17 +23951,17 @@
 												"$ref": "AAAAAAFu0JEnealbKkY="
 											},
 											"font": "Arial;13;0",
-											"left": 462,
-											"top": 719,
+											"left": 463,
+											"top": 720,
 											"width": 108.3671875,
-											"height": 26,
-											"alpha": -3.030935426318336,
-											"distance": 181.10770276274835,
+											"height": 13,
+											"alpha": -3.0635392550477683,
+											"distance": 179.5466513193716,
 											"hostEdge": {
 												"$ref": "AAAAAAFu0JEneqlcc+8="
 											},
 											"edgePosition": 1,
-											"text": "Collect User report",
+											"text": "Store User report",
 											"wordWrap": true
 										},
 										{
@@ -26705,7 +26705,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFutu+JhWJSsmw="
 							},
-							"name": "Check Digital signature",
+							"name": "Generate Digital signature",
 							"source": {
 								"$ref": "AAAAAAFutu+JhmMjTKM="
 							},
@@ -26787,7 +26787,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFutu+JhWJSsmw="
 							},
-							"name": "Collect User report",
+							"name": "Store User report",
 							"source": {
 								"$ref": "AAAAAAFutu+JhmMjTKM="
 							},
@@ -29211,9 +29211,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 376,
-											"top": 270,
+											"top": 277,
 											"width": 135.12255859375,
-											"height": 26,
+											"height": 13,
 											"alpha": -4.547241113780983,
 											"distance": 12.165525060596439,
 											"hostEdge": {
@@ -30211,9 +30211,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 95,
-											"top": 414,
+											"top": 421,
 											"width": 78.76171875,
-											"height": 26,
+											"height": 13,
 											"alpha": -4.390639175988235,
 											"distance": 12.649110640673518,
 											"hostEdge": {
@@ -30989,9 +30989,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 968,
-											"top": 502,
+											"top": 509,
 											"width": 93.2216796875,
-											"height": 26,
+											"height": 13,
 											"alpha": 3.017237671863543,
 											"distance": 96.74709297958259,
 											"hostEdge": {
@@ -34819,9 +34819,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 247,
-											"top": 127,
+											"top": 133,
 											"width": 80,
-											"height": 39,
+											"height": 26,
 											"alpha": -4.662431083415877,
 											"distance": 20.024984394500787,
 											"hostEdge": {
@@ -35484,7 +35484,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 176.72998046875,
+											"left": 175.99365234375,
 											"top": 453,
 											"width": 1,
 											"height": 13
@@ -35498,7 +35498,7 @@
 											"font": "Arial;13;1",
 											"left": 157,
 											"top": 453,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -36668,9 +36668,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 521,
-											"top": 511,
+											"top": 518,
 											"width": 88.86083984375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.4141949633264363,
 											"distance": 19.235384061671343,
 											"hostEdge": {
@@ -39280,7 +39280,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 200.72998046875,
+											"left": 199.99365234375,
 											"top": 453,
 											"width": 1,
 											"height": 13
@@ -39294,7 +39294,7 @@
 											"font": "Arial;13;1",
 											"left": 181,
 											"top": 453,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -39413,7 +39413,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 197.07177734375,
+											"left": 195.61181640625,
 											"top": 765,
 											"width": 1,
 											"height": 13
@@ -39427,7 +39427,7 @@
 											"font": "Arial;13;1",
 											"left": 173,
 											"top": 765,
-											"width": 19.07177734375,
+											"width": 17.61181640625,
 											"height": 13,
 											"text": "opt"
 										},
@@ -39883,9 +39883,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 274,
-											"top": 287,
+											"top": 293,
 											"width": 83,
-											"height": 39,
+											"height": 26,
 											"alpha": -4.5880343960943595,
 											"distance": 24.186773244895647,
 											"hostEdge": {
@@ -40995,9 +40995,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 552,
-											"top": 503,
+											"top": 510,
 											"width": 101.14990234375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.373401247714293,
 											"distance": 20.396078054371138,
 											"hostEdge": {
@@ -43333,9 +43333,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 552,
-											"top": 927,
+											"top": 934,
 											"width": 104.0380859375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.4382454495201138,
 											"distance": 15.132745950421556,
 											"hostEdge": {
@@ -44885,7 +44885,7 @@
 													"left": 869,
 													"top": 47,
 													"width": 71,
-													"height": 26,
+													"height": 13,
 													"text": ":Reports DB",
 													"wordWrap": true
 												},
@@ -45782,9 +45782,9 @@
 												"$ref": "AAAAAAFurVwYEGs4tWc="
 											},
 											"font": "Arial;13;0",
-											"left": 131.578125,
+											"left": 130.11181640625,
 											"top": 101,
-											"width": 110.84619140625,
+											"width": 101.71826171875,
 											"height": 13,
 											"text": "Periodically update"
 										},
@@ -45797,7 +45797,7 @@
 											"font": "Arial;13;1",
 											"left": 101,
 											"top": 101,
-											"width": 25.578125,
+											"width": 24.11181640625,
 											"height": 13,
 											"text": "loop"
 										},
@@ -46994,9 +46994,9 @@
 												"$ref": "AAAAAAFurXQb922HTVM="
 											},
 											"font": "Arial;13;0",
-											"left": 136.72998046875,
+											"left": 135.99365234375,
 											"top": 685,
-											"width": 55.919921875,
+											"width": 50.4482421875,
 											"height": 13,
 											"text": "New data"
 										},
@@ -47009,7 +47009,7 @@
 											"font": "Arial;13;1",
 											"left": 117,
 											"top": 685,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -50096,9 +50096,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 280,
-											"top": 112,
+											"top": 118,
 											"width": 91,
-											"height": 39,
+											"height": 26,
 											"alpha": 1.464060301056241,
 											"distance": 28.160255680657446,
 											"hostEdge": {
@@ -50763,9 +50763,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 805,
-											"top": 287,
+											"top": 294,
 											"width": 165.4833984375,
-											"height": 26,
+											"height": 13,
 											"alpha": 1.523213698631046,
 											"distance": 21.02379604162864,
 											"hostEdge": {
@@ -53418,7 +53418,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 120.72998046875,
+											"left": 119.99365234375,
 											"top": 341,
 											"width": 1,
 											"height": 13
@@ -53432,7 +53432,7 @@
 											"font": "Arial;13;1",
 											"left": 101,
 											"top": 341,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -67442,7 +67442,7 @@
 											"top": 220,
 											"width": 255,
 											"height": 13,
-											"text": "+filterStatistics(filter: Filter)",
+											"text": "+filterStatistics(filter)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -73649,7 +73649,7 @@
 											"top": 203,
 											"width": 195.45068359375,
 											"height": 13,
-											"text": "+saveReport(ur: UserReport)",
+											"text": "+saveReport(ur)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -74104,10 +74104,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFux7aLiqU/0Q8="
 											},
-											"name": "filter",
-											"type": {
-												"$ref": "AAAAAAFuvZhcpUqvU0c="
-											}
+											"name": "filter"
 										}
 									]
 								},
@@ -75173,10 +75170,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFu0ApdY5C3PQE="
 											},
-											"name": "ur",
-											"type": {
-												"$ref": "AAAAAAFuvSa1OC7a2NE="
-											}
+											"name": "ur"
 										}
 									]
 								},
